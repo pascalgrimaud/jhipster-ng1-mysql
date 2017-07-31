@@ -1,0 +1,102 @@
+<div>
+    <h2 data-translate="travisMysqlApp.testManyToMany.home.title">Test Many To Manies</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="test-many-to-many.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.testManyToMany.home.createLabel">
+                        Create new Test Many To Many
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testEntity">Test Entity</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testMapstruct">Test Mapstruct</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testServiceClass">Test Service Class</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testServiceImpl">Test Service Impl</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testInfiniteScroll">Test Infinite Scroll</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testPager">Test Pager</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testPagination">Test Pagination</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToMany.testCustomTableName">Test Custom Table Name</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="testManyToMany in vm.testManyToManies track by testManyToMany.id">
+                    <td><a ui-sref="test-many-to-many-detail({id:testManyToMany.id})">{{testManyToMany.id}}</a></td>
+                    <td>
+                        <span ng-repeat="testEntity in testManyToMany.testEntities">
+                            <a class="form-control-static" ui-sref="test-entity-detail({id: testEntity.id})">{{testEntity.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testMapstruct in testManyToMany.testMapstructs">
+                            <a class="form-control-static" ui-sref="test-mapstruct-detail({id: testMapstruct.id})">{{testMapstruct.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testServiceClass in testManyToMany.testServiceClasses">
+                            <a class="form-control-static" ui-sref="test-service-class-detail({id: testServiceClass.id})">{{testServiceClass.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testServiceImpl in testManyToMany.testServiceImpls">
+                            <a class="form-control-static" ui-sref="test-service-impl-detail({id: testServiceImpl.id})">{{testServiceImpl.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testInfiniteScroll in testManyToMany.testInfiniteScrolls">
+                            <a class="form-control-static" ui-sref="test-infinite-scroll-detail({id: testInfiniteScroll.id})">{{testInfiniteScroll.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testPager in testManyToMany.testPagers">
+                            <a class="form-control-static" ui-sref="test-pager-detail({id: testPager.id})">{{testPager.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testPagination in testManyToMany.testPaginations">
+                            <a class="form-control-static" ui-sref="test-pagination-detail({id: testPagination.id})">{{testPagination.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        <span ng-repeat="testCustomTableName in testManyToMany.testCustomTableNames">
+                            <a class="form-control-static" ui-sref="test-custom-table-name-detail({id: testCustomTableName.id})">{{testCustomTableName.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="test-many-to-many-detail({id:testManyToMany.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-many-to-many.edit({id:testManyToMany.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-many-to-many.delete({id:testManyToMany.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

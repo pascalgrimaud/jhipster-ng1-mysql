@@ -1,0 +1,28 @@
+{
+    "travisMysqlApp": {
+        "testManyToOne" : {
+            "home": {
+                "title": "Test Many To Ones",
+                "createLabel": "Create a new Test Many To One",
+                "createOrEditLabel": "Create or edit a Test Many To One"
+            },
+            "created": "A new Test Many To One is created with identifier {{ param }}",
+            "updated": "A Test Many To One is updated with identifier {{ param }}",
+            "deleted": "A Test Many To One is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Test Many To One {{ id }}?"
+            },
+            "detail": {
+                "title": "Test Many To One"
+            },
+            "testEntity": "Test Entity",
+            "testMapstruct": "Test Mapstruct",
+            "testServiceClass": "Test Service Class",
+            "testServiceImpl": "Test Service Impl",
+            "testInfiniteScroll": "Test Infinite Scroll",
+            "testPager": "Test Pager",
+            "testPagination": "Test Pagination",
+            "testCustomTableName": "Test Custom Table Name"
+        }
+    }
+}

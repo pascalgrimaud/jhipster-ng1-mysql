@@ -1,0 +1,21 @@
+{
+    "travisMysqlApp": {
+        "entityWithServiceClass" : {
+            "home": {
+                "title": "EntityWithServiceClasses",
+                "createLabel": "Créer un nouveau Entity With Service Class",
+                "createOrEditLabel": "Créer ou éditer un Entity With Service Class"
+            },
+            "created": "Un nouveau Entity With Service Class a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Entity With Service Class avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Entity With Service Class avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Entity With Service Class {{ id }} ?"
+            },
+            "detail": {
+                "title": "Entity With Service Class"
+            },
+            "zoe": "Zoe"
+        }
+    }
+}

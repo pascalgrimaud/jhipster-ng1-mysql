@@ -1,0 +1,24 @@
+{
+    "travisMysqlApp": {
+        "testTwoRelationshipsSameEntity" : {
+            "home": {
+                "title": "TestTwoRelationshipsSameEntities",
+                "createLabel": "Créer un nouveau Test Two Relationships Same Entity",
+                "createOrEditLabel": "Créer ou éditer un Test Two Relationships Same Entity"
+            },
+            "created": "Un nouveau Test Two Relationships Same Entity a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Two Relationships Same Entity avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Two Relationships Same Entity avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Two Relationships Same Entity {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Two Relationships Same Entity"
+            },
+            "firstRelationship": "First Relationship",
+            "secondRelationship": "Second Relationship",
+            "userOne": "User One",
+            "userTwo": "User Two"
+        }
+    }
+}

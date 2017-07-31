@@ -1,0 +1,86 @@
+<div>
+    <h2 data-translate="travisMysqlApp.testManyToOne.home.title">Test Many To Ones</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="test-many-to-one.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.testManyToOne.home.createLabel">
+                        Create new Test Many To One
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testEntity">Test Entity</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testMapstruct">Test Mapstruct</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testServiceClass">Test Service Class</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testServiceImpl">Test Service Impl</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testInfiniteScroll">Test Infinite Scroll</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testPager">Test Pager</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testPagination">Test Pagination</span></th>
+                    <th><span data-translate="travisMysqlApp.testManyToOne.testCustomTableName">Test Custom Table Name</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="testManyToOne in vm.testManyToOnes track by testManyToOne.id">
+                    <td><a ui-sref="test-many-to-one-detail({id:testManyToOne.id})">{{testManyToOne.id}}</a></td>
+                    <td>
+                        <a ui-sref="test-entity-detail({id:testManyToOne.testEntity.id})">{{testManyToOne.testEntity.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-mapstruct-detail({id:testManyToOne.testMapstruct.id})">{{testManyToOne.testMapstruct.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-service-class-detail({id:testManyToOne.testServiceClass.id})">{{testManyToOne.testServiceClass.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-service-impl-detail({id:testManyToOne.testServiceImpl.id})">{{testManyToOne.testServiceImpl.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-infinite-scroll-detail({id:testManyToOne.testInfiniteScroll.id})">{{testManyToOne.testInfiniteScroll.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-pager-detail({id:testManyToOne.testPager.id})">{{testManyToOne.testPager.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-pagination-detail({id:testManyToOne.testPagination.id})">{{testManyToOne.testPagination.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="test-custom-table-name-detail({id:testManyToOne.testCustomTableName.id})">{{testManyToOne.testCustomTableName.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="test-many-to-one-detail({id:testManyToOne.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-many-to-one.edit({id:testManyToOne.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-many-to-one.delete({id:testManyToOne.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

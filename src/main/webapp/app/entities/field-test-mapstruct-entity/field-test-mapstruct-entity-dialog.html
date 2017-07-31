@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestMapstructEntityLabel" data-translate="travisMysqlApp.fieldTestMapstructEntity.home.createOrEditLabel">Create or edit a Field Test Mapstruct Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestMapstructEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestMapstructEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.stringEva" for="field_stringEva">String Eva</label>
+            <input type="text" class="form-control" name="stringEva" id="field_stringEva"
+                    ng-model="vm.fieldTestMapstructEntity.stringEva"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.stringRequiredEva" for="field_stringRequiredEva">String Required Eva</label>
+            <input type="text" class="form-control" name="stringRequiredEva" id="field_stringRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.stringRequiredEva"
+                    required/>
+            <div ng-show="editForm.stringRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.stringMinlengthEva" for="field_stringMinlengthEva">String Minlength Eva</label>
+            <input type="text" class="form-control" name="stringMinlengthEva" id="field_stringMinlengthEva"
+                    ng-model="vm.fieldTestMapstructEntity.stringMinlengthEva"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthEva.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.stringMaxlengthEva" for="field_stringMaxlengthEva">String Maxlength Eva</label>
+            <input type="text" class="form-control" name="stringMaxlengthEva" id="field_stringMaxlengthEva"
+                    ng-model="vm.fieldTestMapstructEntity.stringMaxlengthEva"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthEva.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.stringPatternEva" for="field_stringPatternEva">String Pattern Eva</label>
+            <input type="text" class="form-control" name="stringPatternEva" id="field_stringPatternEva"
+                    ng-model="vm.fieldTestMapstructEntity.stringPatternEva"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternEva.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Eva">
+                    This field should follow pattern for "String Pattern Eva".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.integerEva" for="field_integerEva">Integer Eva</label>
+            <input type="number" class="form-control" name="integerEva" id="field_integerEva"
+                    ng-model="vm.fieldTestMapstructEntity.integerEva"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.integerRequiredEva" for="field_integerRequiredEva">Integer Required Eva</label>
+            <input type="number" class="form-control" name="integerRequiredEva" id="field_integerRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.integerRequiredEva"
+                    required/>
+            <div ng-show="editForm.integerRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.integerMinEva" for="field_integerMinEva">Integer Min Eva</label>
+            <input type="number" class="form-control" name="integerMinEva" id="field_integerMinEva"
+                    ng-model="vm.fieldTestMapstructEntity.integerMinEva"
+                    min="0"/>
+            <div ng-show="editForm.integerMinEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinEva.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.integerMaxEva" for="field_integerMaxEva">Integer Max Eva</label>
+            <input type="number" class="form-control" name="integerMaxEva" id="field_integerMaxEva"
+                    ng-model="vm.fieldTestMapstructEntity.integerMaxEva"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxEva.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.longEva" for="field_longEva">Long Eva</label>
+            <input type="number" class="form-control" name="longEva" id="field_longEva"
+                    ng-model="vm.fieldTestMapstructEntity.longEva"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.longRequiredEva" for="field_longRequiredEva">Long Required Eva</label>
+            <input type="number" class="form-control" name="longRequiredEva" id="field_longRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.longRequiredEva"
+                    required/>
+            <div ng-show="editForm.longRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.longMinEva" for="field_longMinEva">Long Min Eva</label>
+            <input type="number" class="form-control" name="longMinEva" id="field_longMinEva"
+                    ng-model="vm.fieldTestMapstructEntity.longMinEva"
+                    min="0"/>
+            <div ng-show="editForm.longMinEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinEva.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.longMaxEva" for="field_longMaxEva">Long Max Eva</label>
+            <input type="number" class="form-control" name="longMaxEva" id="field_longMaxEva"
+                    ng-model="vm.fieldTestMapstructEntity.longMaxEva"
+                    max="100"/>
+            <div ng-show="editForm.longMaxEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxEva.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.floatEva" for="field_floatEva">Float Eva</label>
+            <input type="number" class="form-control" name="floatEva" id="field_floatEva"
+                    ng-model="vm.fieldTestMapstructEntity.floatEva"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.floatRequiredEva" for="field_floatRequiredEva">Float Required Eva</label>
+            <input type="number" class="form-control" name="floatRequiredEva" id="field_floatRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.floatRequiredEva"
+                    required/>
+            <div ng-show="editForm.floatRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.floatMinEva" for="field_floatMinEva">Float Min Eva</label>
+            <input type="number" class="form-control" name="floatMinEva" id="field_floatMinEva"
+                    ng-model="vm.fieldTestMapstructEntity.floatMinEva"
+                    min="0"/>
+            <div ng-show="editForm.floatMinEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinEva.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.floatMaxEva" for="field_floatMaxEva">Float Max Eva</label>
+            <input type="number" class="form-control" name="floatMaxEva" id="field_floatMaxEva"
+                    ng-model="vm.fieldTestMapstructEntity.floatMaxEva"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxEva.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleRequiredEva" for="field_doubleRequiredEva">Double Required Eva</label>
+            <input type="number" class="form-control" name="doubleRequiredEva" id="field_doubleRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.doubleRequiredEva"
+                    required/>
+            <div ng-show="editForm.doubleRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleMinEva" for="field_doubleMinEva">Double Min Eva</label>
+            <input type="number" class="form-control" name="doubleMinEva" id="field_doubleMinEva"
+                    ng-model="vm.fieldTestMapstructEntity.doubleMinEva"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinEva.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleMaxEva" for="field_doubleMaxEva">Double Max Eva</label>
+            <input type="number" class="form-control" name="doubleMaxEva" id="field_doubleMaxEva"
+                    ng-model="vm.fieldTestMapstructEntity.doubleMaxEva"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxEva.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalRequiredEva" for="field_bigDecimalRequiredEva">Big Decimal Required Eva</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredEva" id="field_bigDecimalRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.bigDecimalRequiredEva"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalMinEva" for="field_bigDecimalMinEva">Big Decimal Min Eva</label>
+            <input type="number" class="form-control" name="bigDecimalMinEva" id="field_bigDecimalMinEva"
+                    ng-model="vm.fieldTestMapstructEntity.bigDecimalMinEva"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinEva.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalMaxEva" for="field_bigDecimalMaxEva">Big Decimal Max Eva</label>
+            <input type="number" class="form-control" name="bigDecimalMaxEva" id="field_bigDecimalMaxEva"
+                    ng-model="vm.fieldTestMapstructEntity.bigDecimalMaxEva"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxEva.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxEva.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.localDateEva" for="field_localDateEva">Local Date Eva</label>
+                <div class="input-group">
+                    <input id="field_localDateEva" type="text" class="form-control" name="localDateEva" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestMapstructEntity.localDateEva" is-open="vm.datePickerOpenStatus.localDateEva"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateEva')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.localDateRequiredEva" for="field_localDateRequiredEva">Local Date Required Eva</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredEva" type="text" class="form-control" name="localDateRequiredEva" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestMapstructEntity.localDateRequiredEva" is-open="vm.datePickerOpenStatus.localDateRequiredEva"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredEva')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.zonedDateTimeEva" for="field_zonedDateTimeEva">Zoned Date Time Eva</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeEva" type="text" class="form-control" name="zonedDateTimeEva" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestMapstructEntity.zonedDateTimeEva" is-open="vm.datePickerOpenStatus.zonedDateTimeEva"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeEva')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.zonedDateTimeRequiredEva" for="field_zonedDateTimeRequiredEva">Zoned Date Time Required Eva</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredEva" type="text" class="form-control" name="zonedDateTimeRequiredEva" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestMapstructEntity.zonedDateTimeRequiredEva" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredEva"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredEva')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredEva.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.booleanEva" for="field_booleanEva">Boolean Eva</label>
+                <input type="checkbox" name="booleanEva" id="field_booleanEva"
+                          ng-model="vm.fieldTestMapstructEntity.booleanEva"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.booleanRequiredEva" for="field_booleanRequiredEva">Boolean Required Eva</label>
+                <input type="checkbox" name="booleanRequiredEva" id="field_booleanRequiredEva"
+                          ng-model="vm.fieldTestMapstructEntity.booleanRequiredEva"/>
+            <div ng-show="editForm.booleanRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.enumEva" for="field_enumEva">Enum Eva</label>
+            <select class="form-control" name="enumEva" ng-model="vm.fieldTestMapstructEntity.enumEva" id="field_enumEva">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.enumRequiredEva" for="field_enumRequiredEva">Enum Required Eva</label>
+            <select class="form-control" name="enumRequiredEva" ng-model="vm.fieldTestMapstructEntity.enumRequiredEva" id="field_enumRequiredEva" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageEva($file, vm.fieldTestMapstructEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageEva" for="field_byteImageEva">Byte Image Eva</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestMapstructEntity.byteImageEvaContentType + ';base64,' + vm.fieldTestMapstructEntity.byteImageEva}}" style="max-height: 100px;" ng-if="vm.fieldTestMapstructEntity.byteImageEva" alt="fieldTestMapstructEntity image"/>
+                <div ng-if="vm.fieldTestMapstructEntity.byteImageEva" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteImageEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteImageEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteImageEva=null;vm.fieldTestMapstructEntity.byteImageEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageEva($file, vm.fieldTestMapstructEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageEva" id="field_byteImageEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageEva"
+                    />
+            <input type="hidden" class="form-control" name="byteImageEvaContentType" id="field_byteImageEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageEvaContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredEva($file, vm.fieldTestMapstructEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageRequiredEva" for="field_byteImageRequiredEva">Byte Image Required Eva</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestMapstructEntity.byteImageRequiredEvaContentType + ';base64,' + vm.fieldTestMapstructEntity.byteImageRequiredEva}}" style="max-height: 100px;" ng-if="vm.fieldTestMapstructEntity.byteImageRequiredEva" alt="fieldTestMapstructEntity image"/>
+                <div ng-if="vm.fieldTestMapstructEntity.byteImageRequiredEva" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteImageRequiredEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteImageRequiredEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteImageRequiredEva=null;vm.fieldTestMapstructEntity.byteImageRequiredEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredEva($file, vm.fieldTestMapstructEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredEva" id="field_byteImageRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageRequiredEva"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredEvaContentType" id="field_byteImageRequiredEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageRequiredEvaContentType" />
+            <div ng-show="editForm.byteImageRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesEva($file, vm.fieldTestMapstructEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageMinbytesEva" for="field_byteImageMinbytesEva">Byte Image Minbytes Eva</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestMapstructEntity.byteImageMinbytesEvaContentType + ';base64,' + vm.fieldTestMapstructEntity.byteImageMinbytesEva}}" style="max-height: 100px;" ng-if="vm.fieldTestMapstructEntity.byteImageMinbytesEva" alt="fieldTestMapstructEntity image"/>
+                <div ng-if="vm.fieldTestMapstructEntity.byteImageMinbytesEva" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteImageMinbytesEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteImageMinbytesEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteImageMinbytesEva=null;vm.fieldTestMapstructEntity.byteImageMinbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesEva($file, vm.fieldTestMapstructEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesEva" id="field_byteImageMinbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageMinbytesEva"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesEvaContentType" id="field_byteImageMinbytesEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageMinbytesEvaContentType" />
+            <div ng-show="editForm.byteImageMinbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesEva.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesEva($file, vm.fieldTestMapstructEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageMaxbytesEva" for="field_byteImageMaxbytesEva">Byte Image Maxbytes Eva</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestMapstructEntity.byteImageMaxbytesEvaContentType + ';base64,' + vm.fieldTestMapstructEntity.byteImageMaxbytesEva}}" style="max-height: 100px;" ng-if="vm.fieldTestMapstructEntity.byteImageMaxbytesEva" alt="fieldTestMapstructEntity image"/>
+                <div ng-if="vm.fieldTestMapstructEntity.byteImageMaxbytesEva" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteImageMaxbytesEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteImageMaxbytesEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteImageMaxbytesEva=null;vm.fieldTestMapstructEntity.byteImageMaxbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesEva($file, vm.fieldTestMapstructEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesEva" id="field_byteImageMaxbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageMaxbytesEva"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesEvaContentType" id="field_byteImageMaxbytesEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteImageMaxbytesEvaContentType" />
+            <div ng-show="editForm.byteImageMaxbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesEva.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyEva($file, vm.fieldTestMapstructEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyEva" for="field_byteAnyEva">Byte Any Eva</label>
+            <div>
+                <div ng-if="vm.fieldTestMapstructEntity.byteAnyEva" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestMapstructEntity.byteAnyEvaContentType, vm.fieldTestMapstructEntity.byteAnyEva)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteAnyEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteAnyEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteAnyEva=null;vm.fieldTestMapstructEntity.byteAnyEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyEva($file, vm.fieldTestMapstructEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyEva" id="field_byteAnyEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyEva"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyEvaContentType" id="field_byteAnyEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyEvaContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredEva($file, vm.fieldTestMapstructEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyRequiredEva" for="field_byteAnyRequiredEva">Byte Any Required Eva</label>
+            <div>
+                <div ng-if="vm.fieldTestMapstructEntity.byteAnyRequiredEva" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestMapstructEntity.byteAnyRequiredEvaContentType, vm.fieldTestMapstructEntity.byteAnyRequiredEva)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteAnyRequiredEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteAnyRequiredEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteAnyRequiredEva=null;vm.fieldTestMapstructEntity.byteAnyRequiredEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredEva($file, vm.fieldTestMapstructEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredEva" id="field_byteAnyRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyRequiredEva"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredEvaContentType" id="field_byteAnyRequiredEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyRequiredEvaContentType" />
+            <div ng-show="editForm.byteAnyRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesEva($file, vm.fieldTestMapstructEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyMinbytesEva" for="field_byteAnyMinbytesEva">Byte Any Minbytes Eva</label>
+            <div>
+                <div ng-if="vm.fieldTestMapstructEntity.byteAnyMinbytesEva" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestMapstructEntity.byteAnyMinbytesEvaContentType, vm.fieldTestMapstructEntity.byteAnyMinbytesEva)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteAnyMinbytesEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteAnyMinbytesEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteAnyMinbytesEva=null;vm.fieldTestMapstructEntity.byteAnyMinbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesEva($file, vm.fieldTestMapstructEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesEva" id="field_byteAnyMinbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyMinbytesEva"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesEvaContentType" id="field_byteAnyMinbytesEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyMinbytesEvaContentType" />
+            <div ng-show="editForm.byteAnyMinbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesEva.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesEva($file, vm.fieldTestMapstructEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyMaxbytesEva" for="field_byteAnyMaxbytesEva">Byte Any Maxbytes Eva</label>
+            <div>
+                <div ng-if="vm.fieldTestMapstructEntity.byteAnyMaxbytesEva" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType, vm.fieldTestMapstructEntity.byteAnyMaxbytesEva)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType}}, {{vm.byteSize(vm.fieldTestMapstructEntity.byteAnyMaxbytesEva)}}</span>
+                    <button type="button" ng-click="vm.fieldTestMapstructEntity.byteAnyMaxbytesEva=null;vm.fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesEva($file, vm.fieldTestMapstructEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesEva" id="field_byteAnyMaxbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyMaxbytesEva"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesEvaContentType" id="field_byteAnyMaxbytesEvaContentType"
+                    ng-model="vm.fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesEva.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextEva" for="field_byteTextEva">Byte Text Eva</label>
+                <textarea class="form-control" name="byteTextEva" id="field_byteTextEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteTextEva" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextRequiredEva" for="field_byteTextRequiredEva">Byte Text Required Eva</label>
+                <textarea class="form-control" name="byteTextRequiredEva" id="field_byteTextRequiredEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteTextRequiredEva" required></textarea>
+            <div ng-show="editForm.byteTextRequiredEva.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredEva.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextMinbytesEva" for="field_byteTextMinbytesEva">Byte Text Minbytes Eva</label>
+                <textarea class="form-control" name="byteTextMinbytesEva" id="field_byteTextMinbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteTextMinbytesEva" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesEva.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextMaxbytesEva" for="field_byteTextMaxbytesEva">Byte Text Maxbytes Eva</label>
+                <textarea class="form-control" name="byteTextMaxbytesEva" id="field_byteTextMaxbytesEva"
+                    ng-model="vm.fieldTestMapstructEntity.byteTextMaxbytesEva" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesEva.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesEva.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

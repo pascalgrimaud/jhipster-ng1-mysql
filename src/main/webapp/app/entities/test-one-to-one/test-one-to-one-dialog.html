@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTestOneToOneLabel" data-translate="travisMysqlApp.testOneToOne.home.createOrEditLabel">Create or edit a Test One To One</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.testOneToOne.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.testOneToOne.id" readonly />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testEntity" for="field_testEntity">Test Entity</label>
+            <select class="form-control" id="field_testEntity" name="testEntity" ng-model="vm.testOneToOne.testEntity" ng-options="testEntity as testEntity.id for testEntity in vm.testentities | orderBy:'id' track by testEntity.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testMapstruct" for="field_testMapstruct">Test Mapstruct</label>
+            <select class="form-control" id="field_testMapstruct" name="testMapstruct" ng-model="vm.testOneToOne.testMapstruct" ng-options="testMapstruct as testMapstruct.id for testMapstruct in vm.testmapstructs | orderBy:'id' track by testMapstruct.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testServiceClass" for="field_testServiceClass">Test Service Class</label>
+            <select class="form-control" id="field_testServiceClass" name="testServiceClass" ng-model="vm.testOneToOne.testServiceClass" ng-options="testServiceClass as testServiceClass.id for testServiceClass in vm.testserviceclasses | orderBy:'id' track by testServiceClass.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testServiceImpl" for="field_testServiceImpl">Test Service Impl</label>
+            <select class="form-control" id="field_testServiceImpl" name="testServiceImpl" ng-model="vm.testOneToOne.testServiceImpl" ng-options="testServiceImpl as testServiceImpl.id for testServiceImpl in vm.testserviceimpls | orderBy:'id' track by testServiceImpl.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testInfiniteScroll" for="field_testInfiniteScroll">Test Infinite Scroll</label>
+            <select class="form-control" id="field_testInfiniteScroll" name="testInfiniteScroll" ng-model="vm.testOneToOne.testInfiniteScroll" ng-options="testInfiniteScroll as testInfiniteScroll.id for testInfiniteScroll in vm.testinfinitescrolls | orderBy:'id' track by testInfiniteScroll.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testPager" for="field_testPager">Test Pager</label>
+            <select class="form-control" id="field_testPager" name="testPager" ng-model="vm.testOneToOne.testPager" ng-options="testPager as testPager.id for testPager in vm.testpagers | orderBy:'id' track by testPager.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testPagination" for="field_testPagination">Test Pagination</label>
+            <select class="form-control" id="field_testPagination" name="testPagination" ng-model="vm.testOneToOne.testPagination" ng-options="testPagination as testPagination.id for testPagination in vm.testpaginations | orderBy:'id' track by testPagination.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="travisMysqlApp.testOneToOne.testCustomTableName" for="field_testCustomTableName">Test Custom Table Name</label>
+            <select class="form-control" id="field_testCustomTableName" name="testCustomTableName" ng-model="vm.testOneToOne.testCustomTableName" ng-options="testCustomTableName as testCustomTableName.id for testCustomTableName in vm.testcustomtablenames | orderBy:'id' track by testCustomTableName.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

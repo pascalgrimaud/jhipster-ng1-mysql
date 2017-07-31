@@ -1,0 +1,21 @@
+{
+    "travisMysqlApp": {
+        "entityWithServiceImpl" : {
+            "home": {
+                "title": "EntityWithServiceImpls",
+                "createLabel": "Créer un nouveau Entity With Service Impl",
+                "createOrEditLabel": "Créer ou éditer un Entity With Service Impl"
+            },
+            "created": "Un nouveau Entity With Service Impl a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Entity With Service Impl avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Entity With Service Impl avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Entity With Service Impl {{ id }} ?"
+            },
+            "detail": {
+                "title": "Entity With Service Impl"
+            },
+            "clara": "Clara"
+        }
+    }
+}

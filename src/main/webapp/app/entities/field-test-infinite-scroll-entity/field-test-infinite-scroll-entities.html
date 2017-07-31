@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.home.title">Field Test Infinite Scroll Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-infinite-scroll-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.home.createLabel">
+                        Create new Field Test Infinite Scroll Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringHugo">String Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringRequiredHugo">String Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMinlengthHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringMinlengthHugo">String Minlength Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMaxlengthHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringMaxlengthHugo">String Maxlength Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringPatternHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringPatternHugo">String Pattern Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerHugo">Integer Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerRequiredHugo">Integer Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMinHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerMinHugo">Integer Min Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMaxHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerMaxHugo">Integer Max Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longHugo">Long Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longRequiredHugo">Long Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMinHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longMinHugo">Long Min Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMaxHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longMaxHugo">Long Max Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatHugo">Float Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatRequiredHugo">Float Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMinHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatMinHugo">Float Min Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMaxHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatMaxHugo">Float Max Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleRequiredHugo">Double Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMinHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleMinHugo">Double Min Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMaxHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleMaxHugo">Double Max Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo">Big Decimal Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMinHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalMinHugo">Big Decimal Min Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMaxHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalMaxHugo">Big Decimal Max Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.localDateHugo">Local Date Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.localDateRequiredHugo">Local Date Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.zonedDateTimeHugo">Zoned Date Time Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo">Zoned Date Time Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.booleanHugo">Boolean Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.booleanRequiredHugo">Boolean Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.enumHugo">Enum Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.enumRequiredHugo">Enum Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageHugo">Byte Image Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageRequiredHugo">Byte Image Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMinbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo">Byte Image Minbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMaxbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo">Byte Image Maxbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyHugo">Byte Any Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo">Byte Any Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMinbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo">Byte Any Minbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMaxbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo">Byte Any Maxbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextHugo">Byte Text Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextRequiredHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextRequiredHugo">Byte Text Required Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMinbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextMinbytesHugo">Byte Text Minbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMaxbytesHugo"><span data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo">Byte Text Maxbytes Hugo</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="fieldTestInfiniteScrollEntity in vm.fieldTestInfiniteScrollEntities track by fieldTestInfiniteScrollEntity.id">
+                    <td><a ui-sref="field-test-infinite-scroll-entity-detail({id:fieldTestInfiniteScrollEntity.id})">{{fieldTestInfiniteScrollEntity.id}}</a></td>
+                    <td>{{fieldTestInfiniteScrollEntity.stringHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.stringRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.stringMinlengthHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.stringMaxlengthHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.stringPatternHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.integerHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.integerRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.integerMinHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.integerMaxHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.longHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.longRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.longMinHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.longMaxHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.floatHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.floatRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.floatMinHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.floatMaxHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.doubleRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.doubleMinHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.doubleMaxHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.bigDecimalMinHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.bigDecimalMaxHugo}}</td>
+                        <td>{{fieldTestInfiniteScrollEntity.localDateHugo | date:'mediumDate'}}</td>
+                        <td>{{fieldTestInfiniteScrollEntity.localDateRequiredHugo | date:'mediumDate'}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.zonedDateTimeHugo | date:'medium'}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo | date:'medium'}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.booleanHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.booleanRequiredHugo}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestInfiniteScrollEntity.enumHugo}}">{{fieldTestInfiniteScrollEntity.enumHugo}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestInfiniteScrollEntity.enumRequiredHugo}}">{{fieldTestInfiniteScrollEntity.enumRequiredHugo}}</td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteImageHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteImageHugoContentType, fieldTestInfiniteScrollEntity.byteImageHugo)">
+                            <img data-ng-src="{{'data:' + fieldTestInfiniteScrollEntity.byteImageHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageHugo}}" style="max-height: 30px;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteImageHugo">{{fieldTestInfiniteScrollEntity.byteImageHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteImageHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteImageRequiredHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteImageRequiredHugo)">
+                            <img data-ng-src="{{'data:' + fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageRequiredHugo}}" style="max-height: 30px;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteImageRequiredHugo">{{fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteImageRequiredHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)">
+                            <img data-ng-src="{{'data:' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMinbytesHugo}}" style="max-height: 30px;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteImageMinbytesHugo">{{fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)">
+                            <img data-ng-src="{{'data:' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType + ';base64,' + fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo}}" style="max-height: 30px;" alt="fieldTestInfiniteScrollEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo">{{fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteAnyHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteAnyHugoContentType, fieldTestInfiniteScrollEntity.byteAnyHugo)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteAnyHugo">{{fieldTestInfiniteScrollEntity.byteAnyHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteAnyHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType, fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteAnyRequiredHugo">{{fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo">{{fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" ng-click="vm.openFile(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType, fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo">{{fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType}}, {{vm.byteSize(fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)}}</span>
+                    </td>
+                    <td>{{fieldTestInfiniteScrollEntity.byteTextHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.byteTextRequiredHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.byteTextMinbytesHugo}}</td>
+                    <td>{{fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-infinite-scroll-entity-detail({id:fieldTestInfiniteScrollEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-infinite-scroll-entity.edit({id:fieldTestInfiniteScrollEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-infinite-scroll-entity.delete({id:fieldTestInfiniteScrollEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

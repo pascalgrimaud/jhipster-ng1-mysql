@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testPagination" : {
+            "home": {
+                "title": "TestPaginations",
+                "createLabel": "Créer un nouveau Test Pagination",
+                "createOrEditLabel": "Créer ou éditer un Test Pagination"
+            },
+            "created": "Un nouveau Test Pagination a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Pagination avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Pagination avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Pagination {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Pagination"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

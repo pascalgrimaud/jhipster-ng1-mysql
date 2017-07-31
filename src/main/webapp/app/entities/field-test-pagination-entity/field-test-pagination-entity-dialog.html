@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestPaginationEntityLabel" data-translate="travisMysqlApp.fieldTestPaginationEntity.home.createOrEditLabel">Create or edit a Field Test Pagination Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestPaginationEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestPaginationEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.stringAlice" for="field_stringAlice">String Alice</label>
+            <input type="text" class="form-control" name="stringAlice" id="field_stringAlice"
+                    ng-model="vm.fieldTestPaginationEntity.stringAlice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.stringRequiredAlice" for="field_stringRequiredAlice">String Required Alice</label>
+            <input type="text" class="form-control" name="stringRequiredAlice" id="field_stringRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.stringRequiredAlice"
+                    required/>
+            <div ng-show="editForm.stringRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.stringMinlengthAlice" for="field_stringMinlengthAlice">String Minlength Alice</label>
+            <input type="text" class="form-control" name="stringMinlengthAlice" id="field_stringMinlengthAlice"
+                    ng-model="vm.fieldTestPaginationEntity.stringMinlengthAlice"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthAlice.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.stringMaxlengthAlice" for="field_stringMaxlengthAlice">String Maxlength Alice</label>
+            <input type="text" class="form-control" name="stringMaxlengthAlice" id="field_stringMaxlengthAlice"
+                    ng-model="vm.fieldTestPaginationEntity.stringMaxlengthAlice"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthAlice.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.stringPatternAlice" for="field_stringPatternAlice">String Pattern Alice</label>
+            <input type="text" class="form-control" name="stringPatternAlice" id="field_stringPatternAlice"
+                    ng-model="vm.fieldTestPaginationEntity.stringPatternAlice"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternAlice.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Alice">
+                    This field should follow pattern for "String Pattern Alice".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.integerAlice" for="field_integerAlice">Integer Alice</label>
+            <input type="number" class="form-control" name="integerAlice" id="field_integerAlice"
+                    ng-model="vm.fieldTestPaginationEntity.integerAlice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.integerRequiredAlice" for="field_integerRequiredAlice">Integer Required Alice</label>
+            <input type="number" class="form-control" name="integerRequiredAlice" id="field_integerRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.integerRequiredAlice"
+                    required/>
+            <div ng-show="editForm.integerRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.integerMinAlice" for="field_integerMinAlice">Integer Min Alice</label>
+            <input type="number" class="form-control" name="integerMinAlice" id="field_integerMinAlice"
+                    ng-model="vm.fieldTestPaginationEntity.integerMinAlice"
+                    min="0"/>
+            <div ng-show="editForm.integerMinAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinAlice.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.integerMaxAlice" for="field_integerMaxAlice">Integer Max Alice</label>
+            <input type="number" class="form-control" name="integerMaxAlice" id="field_integerMaxAlice"
+                    ng-model="vm.fieldTestPaginationEntity.integerMaxAlice"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxAlice.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.longAlice" for="field_longAlice">Long Alice</label>
+            <input type="number" class="form-control" name="longAlice" id="field_longAlice"
+                    ng-model="vm.fieldTestPaginationEntity.longAlice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.longRequiredAlice" for="field_longRequiredAlice">Long Required Alice</label>
+            <input type="number" class="form-control" name="longRequiredAlice" id="field_longRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.longRequiredAlice"
+                    required/>
+            <div ng-show="editForm.longRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.longMinAlice" for="field_longMinAlice">Long Min Alice</label>
+            <input type="number" class="form-control" name="longMinAlice" id="field_longMinAlice"
+                    ng-model="vm.fieldTestPaginationEntity.longMinAlice"
+                    min="0"/>
+            <div ng-show="editForm.longMinAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinAlice.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.longMaxAlice" for="field_longMaxAlice">Long Max Alice</label>
+            <input type="number" class="form-control" name="longMaxAlice" id="field_longMaxAlice"
+                    ng-model="vm.fieldTestPaginationEntity.longMaxAlice"
+                    max="100"/>
+            <div ng-show="editForm.longMaxAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxAlice.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.floatAlice" for="field_floatAlice">Float Alice</label>
+            <input type="number" class="form-control" name="floatAlice" id="field_floatAlice"
+                    ng-model="vm.fieldTestPaginationEntity.floatAlice"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.floatRequiredAlice" for="field_floatRequiredAlice">Float Required Alice</label>
+            <input type="number" class="form-control" name="floatRequiredAlice" id="field_floatRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.floatRequiredAlice"
+                    required/>
+            <div ng-show="editForm.floatRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.floatMinAlice" for="field_floatMinAlice">Float Min Alice</label>
+            <input type="number" class="form-control" name="floatMinAlice" id="field_floatMinAlice"
+                    ng-model="vm.fieldTestPaginationEntity.floatMinAlice"
+                    min="0"/>
+            <div ng-show="editForm.floatMinAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinAlice.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.floatMaxAlice" for="field_floatMaxAlice">Float Max Alice</label>
+            <input type="number" class="form-control" name="floatMaxAlice" id="field_floatMaxAlice"
+                    ng-model="vm.fieldTestPaginationEntity.floatMaxAlice"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxAlice.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleRequiredAlice" for="field_doubleRequiredAlice">Double Required Alice</label>
+            <input type="number" class="form-control" name="doubleRequiredAlice" id="field_doubleRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.doubleRequiredAlice"
+                    required/>
+            <div ng-show="editForm.doubleRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleMinAlice" for="field_doubleMinAlice">Double Min Alice</label>
+            <input type="number" class="form-control" name="doubleMinAlice" id="field_doubleMinAlice"
+                    ng-model="vm.fieldTestPaginationEntity.doubleMinAlice"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinAlice.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleMaxAlice" for="field_doubleMaxAlice">Double Max Alice</label>
+            <input type="number" class="form-control" name="doubleMaxAlice" id="field_doubleMaxAlice"
+                    ng-model="vm.fieldTestPaginationEntity.doubleMaxAlice"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxAlice.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalRequiredAlice" for="field_bigDecimalRequiredAlice">Big Decimal Required Alice</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredAlice" id="field_bigDecimalRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.bigDecimalRequiredAlice"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalMinAlice" for="field_bigDecimalMinAlice">Big Decimal Min Alice</label>
+            <input type="number" class="form-control" name="bigDecimalMinAlice" id="field_bigDecimalMinAlice"
+                    ng-model="vm.fieldTestPaginationEntity.bigDecimalMinAlice"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinAlice.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalMaxAlice" for="field_bigDecimalMaxAlice">Big Decimal Max Alice</label>
+            <input type="number" class="form-control" name="bigDecimalMaxAlice" id="field_bigDecimalMaxAlice"
+                    ng-model="vm.fieldTestPaginationEntity.bigDecimalMaxAlice"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxAlice.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxAlice.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.localDateAlice" for="field_localDateAlice">Local Date Alice</label>
+                <div class="input-group">
+                    <input id="field_localDateAlice" type="text" class="form-control" name="localDateAlice" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestPaginationEntity.localDateAlice" is-open="vm.datePickerOpenStatus.localDateAlice"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateAlice')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.localDateRequiredAlice" for="field_localDateRequiredAlice">Local Date Required Alice</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredAlice" type="text" class="form-control" name="localDateRequiredAlice" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestPaginationEntity.localDateRequiredAlice" is-open="vm.datePickerOpenStatus.localDateRequiredAlice"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredAlice')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.zonedDateTimeAlice" for="field_zonedDateTimeAlice">Zoned Date Time Alice</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeAlice" type="text" class="form-control" name="zonedDateTimeAlice" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestPaginationEntity.zonedDateTimeAlice" is-open="vm.datePickerOpenStatus.zonedDateTimeAlice"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeAlice')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.zonedDateTimeRequiredAlice" for="field_zonedDateTimeRequiredAlice">Zoned Date Time Required Alice</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredAlice" type="text" class="form-control" name="zonedDateTimeRequiredAlice" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestPaginationEntity.zonedDateTimeRequiredAlice" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredAlice"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredAlice')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredAlice.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.booleanAlice" for="field_booleanAlice">Boolean Alice</label>
+                <input type="checkbox" name="booleanAlice" id="field_booleanAlice"
+                          ng-model="vm.fieldTestPaginationEntity.booleanAlice"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.booleanRequiredAlice" for="field_booleanRequiredAlice">Boolean Required Alice</label>
+                <input type="checkbox" name="booleanRequiredAlice" id="field_booleanRequiredAlice"
+                          ng-model="vm.fieldTestPaginationEntity.booleanRequiredAlice"/>
+            <div ng-show="editForm.booleanRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.enumAlice" for="field_enumAlice">Enum Alice</label>
+            <select class="form-control" name="enumAlice" ng-model="vm.fieldTestPaginationEntity.enumAlice" id="field_enumAlice">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.enumRequiredAlice" for="field_enumRequiredAlice">Enum Required Alice</label>
+            <select class="form-control" name="enumRequiredAlice" ng-model="vm.fieldTestPaginationEntity.enumRequiredAlice" id="field_enumRequiredAlice" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageAlice($file, vm.fieldTestPaginationEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageAlice" for="field_byteImageAlice">Byte Image Alice</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + vm.fieldTestPaginationEntity.byteImageAlice}}" style="max-height: 100px;" ng-if="vm.fieldTestPaginationEntity.byteImageAlice" alt="fieldTestPaginationEntity image"/>
+                <div ng-if="vm.fieldTestPaginationEntity.byteImageAlice" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteImageAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteImageAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteImageAlice=null;vm.fieldTestPaginationEntity.byteImageAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageAlice($file, vm.fieldTestPaginationEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageAlice" id="field_byteImageAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageAlice"
+                    />
+            <input type="hidden" class="form-control" name="byteImageAliceContentType" id="field_byteImageAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageAliceContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredAlice($file, vm.fieldTestPaginationEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageRequiredAlice" for="field_byteImageRequiredAlice">Byte Image Required Alice</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + vm.fieldTestPaginationEntity.byteImageRequiredAlice}}" style="max-height: 100px;" ng-if="vm.fieldTestPaginationEntity.byteImageRequiredAlice" alt="fieldTestPaginationEntity image"/>
+                <div ng-if="vm.fieldTestPaginationEntity.byteImageRequiredAlice" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteImageRequiredAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteImageRequiredAlice=null;vm.fieldTestPaginationEntity.byteImageRequiredAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredAlice($file, vm.fieldTestPaginationEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredAlice" id="field_byteImageRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageRequiredAlice"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredAliceContentType" id="field_byteImageRequiredAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageRequiredAliceContentType" />
+            <div ng-show="editForm.byteImageRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesAlice($file, vm.fieldTestPaginationEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageMinbytesAlice" for="field_byteImageMinbytesAlice">Byte Image Minbytes Alice</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + vm.fieldTestPaginationEntity.byteImageMinbytesAlice}}" style="max-height: 100px;" ng-if="vm.fieldTestPaginationEntity.byteImageMinbytesAlice" alt="fieldTestPaginationEntity image"/>
+                <div ng-if="vm.fieldTestPaginationEntity.byteImageMinbytesAlice" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteImageMinbytesAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteImageMinbytesAlice=null;vm.fieldTestPaginationEntity.byteImageMinbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesAlice($file, vm.fieldTestPaginationEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesAlice" id="field_byteImageMinbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageMinbytesAlice"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesAliceContentType" id="field_byteImageMinbytesAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageMinbytesAliceContentType" />
+            <div ng-show="editForm.byteImageMinbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesAlice.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesAlice($file, vm.fieldTestPaginationEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageMaxbytesAlice" for="field_byteImageMaxbytesAlice">Byte Image Maxbytes Alice</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + vm.fieldTestPaginationEntity.byteImageMaxbytesAlice}}" style="max-height: 100px;" ng-if="vm.fieldTestPaginationEntity.byteImageMaxbytesAlice" alt="fieldTestPaginationEntity image"/>
+                <div ng-if="vm.fieldTestPaginationEntity.byteImageMaxbytesAlice" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteImageMaxbytesAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteImageMaxbytesAlice=null;vm.fieldTestPaginationEntity.byteImageMaxbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesAlice($file, vm.fieldTestPaginationEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesAlice" id="field_byteImageMaxbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageMaxbytesAlice"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesAliceContentType" id="field_byteImageMaxbytesAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteImageMaxbytesAliceContentType" />
+            <div ng-show="editForm.byteImageMaxbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesAlice.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyAlice($file, vm.fieldTestPaginationEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyAlice" for="field_byteAnyAlice">Byte Any Alice</label>
+            <div>
+                <div ng-if="vm.fieldTestPaginationEntity.byteAnyAlice" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPaginationEntity.byteAnyAliceContentType, vm.fieldTestPaginationEntity.byteAnyAlice)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteAnyAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteAnyAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteAnyAlice=null;vm.fieldTestPaginationEntity.byteAnyAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyAlice($file, vm.fieldTestPaginationEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyAlice" id="field_byteAnyAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyAlice"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyAliceContentType" id="field_byteAnyAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyAliceContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredAlice($file, vm.fieldTestPaginationEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyRequiredAlice" for="field_byteAnyRequiredAlice">Byte Any Required Alice</label>
+            <div>
+                <div ng-if="vm.fieldTestPaginationEntity.byteAnyRequiredAlice" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPaginationEntity.byteAnyRequiredAliceContentType, vm.fieldTestPaginationEntity.byteAnyRequiredAlice)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteAnyRequiredAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteAnyRequiredAlice=null;vm.fieldTestPaginationEntity.byteAnyRequiredAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredAlice($file, vm.fieldTestPaginationEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredAlice" id="field_byteAnyRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyRequiredAlice"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredAliceContentType" id="field_byteAnyRequiredAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyRequiredAliceContentType" />
+            <div ng-show="editForm.byteAnyRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesAlice($file, vm.fieldTestPaginationEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyMinbytesAlice" for="field_byteAnyMinbytesAlice">Byte Any Minbytes Alice</label>
+            <div>
+                <div ng-if="vm.fieldTestPaginationEntity.byteAnyMinbytesAlice" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, vm.fieldTestPaginationEntity.byteAnyMinbytesAlice)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteAnyMinbytesAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteAnyMinbytesAlice=null;vm.fieldTestPaginationEntity.byteAnyMinbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesAlice($file, vm.fieldTestPaginationEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesAlice" id="field_byteAnyMinbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyMinbytesAlice"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesAliceContentType" id="field_byteAnyMinbytesAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyMinbytesAliceContentType" />
+            <div ng-show="editForm.byteAnyMinbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesAlice.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesAlice($file, vm.fieldTestPaginationEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyMaxbytesAlice" for="field_byteAnyMaxbytesAlice">Byte Any Maxbytes Alice</label>
+            <div>
+                <div ng-if="vm.fieldTestPaginationEntity.byteAnyMaxbytesAlice" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, vm.fieldTestPaginationEntity.byteAnyMaxbytesAlice)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{vm.byteSize(vm.fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPaginationEntity.byteAnyMaxbytesAlice=null;vm.fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesAlice($file, vm.fieldTestPaginationEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesAlice" id="field_byteAnyMaxbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyMaxbytesAlice"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesAliceContentType" id="field_byteAnyMaxbytesAliceContentType"
+                    ng-model="vm.fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesAlice.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextAlice" for="field_byteTextAlice">Byte Text Alice</label>
+                <textarea class="form-control" name="byteTextAlice" id="field_byteTextAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteTextAlice" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextRequiredAlice" for="field_byteTextRequiredAlice">Byte Text Required Alice</label>
+                <textarea class="form-control" name="byteTextRequiredAlice" id="field_byteTextRequiredAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteTextRequiredAlice" required></textarea>
+            <div ng-show="editForm.byteTextRequiredAlice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredAlice.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextMinbytesAlice" for="field_byteTextMinbytesAlice">Byte Text Minbytes Alice</label>
+                <textarea class="form-control" name="byteTextMinbytesAlice" id="field_byteTextMinbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteTextMinbytesAlice" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesAlice.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextMaxbytesAlice" for="field_byteTextMaxbytesAlice">Byte Text Maxbytes Alice</label>
+                <textarea class="form-control" name="byteTextMaxbytesAlice" id="field_byteTextMaxbytesAlice"
+                    ng-model="vm.fieldTestPaginationEntity.byteTextMaxbytesAlice" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesAlice.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesAlice.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testMapstruct" : {
+            "home": {
+                "title": "TestMapstructs",
+                "createLabel": "Créer un nouveau Test Mapstruct",
+                "createOrEditLabel": "Créer ou éditer un Test Mapstruct"
+            },
+            "created": "Un nouveau Test Mapstruct a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Mapstruct avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Mapstruct avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Mapstruct {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Mapstruct"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

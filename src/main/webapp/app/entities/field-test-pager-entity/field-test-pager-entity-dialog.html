@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestPagerEntityLabel" data-translate="travisMysqlApp.fieldTestPagerEntity.home.createOrEditLabel">Create or edit a Field Test Pager Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestPagerEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestPagerEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.stringJade" for="field_stringJade">String Jade</label>
+            <input type="text" class="form-control" name="stringJade" id="field_stringJade"
+                    ng-model="vm.fieldTestPagerEntity.stringJade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.stringRequiredJade" for="field_stringRequiredJade">String Required Jade</label>
+            <input type="text" class="form-control" name="stringRequiredJade" id="field_stringRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.stringRequiredJade"
+                    required/>
+            <div ng-show="editForm.stringRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.stringMinlengthJade" for="field_stringMinlengthJade">String Minlength Jade</label>
+            <input type="text" class="form-control" name="stringMinlengthJade" id="field_stringMinlengthJade"
+                    ng-model="vm.fieldTestPagerEntity.stringMinlengthJade"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthJade.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.stringMaxlengthJade" for="field_stringMaxlengthJade">String Maxlength Jade</label>
+            <input type="text" class="form-control" name="stringMaxlengthJade" id="field_stringMaxlengthJade"
+                    ng-model="vm.fieldTestPagerEntity.stringMaxlengthJade"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthJade.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.stringPatternJade" for="field_stringPatternJade">String Pattern Jade</label>
+            <input type="text" class="form-control" name="stringPatternJade" id="field_stringPatternJade"
+                    ng-model="vm.fieldTestPagerEntity.stringPatternJade"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternJade.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Jade">
+                    This field should follow pattern for "String Pattern Jade".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.integerJade" for="field_integerJade">Integer Jade</label>
+            <input type="number" class="form-control" name="integerJade" id="field_integerJade"
+                    ng-model="vm.fieldTestPagerEntity.integerJade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.integerRequiredJade" for="field_integerRequiredJade">Integer Required Jade</label>
+            <input type="number" class="form-control" name="integerRequiredJade" id="field_integerRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.integerRequiredJade"
+                    required/>
+            <div ng-show="editForm.integerRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.integerMinJade" for="field_integerMinJade">Integer Min Jade</label>
+            <input type="number" class="form-control" name="integerMinJade" id="field_integerMinJade"
+                    ng-model="vm.fieldTestPagerEntity.integerMinJade"
+                    min="0"/>
+            <div ng-show="editForm.integerMinJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinJade.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.integerMaxJade" for="field_integerMaxJade">Integer Max Jade</label>
+            <input type="number" class="form-control" name="integerMaxJade" id="field_integerMaxJade"
+                    ng-model="vm.fieldTestPagerEntity.integerMaxJade"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxJade.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.longJade" for="field_longJade">Long Jade</label>
+            <input type="number" class="form-control" name="longJade" id="field_longJade"
+                    ng-model="vm.fieldTestPagerEntity.longJade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.longRequiredJade" for="field_longRequiredJade">Long Required Jade</label>
+            <input type="number" class="form-control" name="longRequiredJade" id="field_longRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.longRequiredJade"
+                    required/>
+            <div ng-show="editForm.longRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.longMinJade" for="field_longMinJade">Long Min Jade</label>
+            <input type="number" class="form-control" name="longMinJade" id="field_longMinJade"
+                    ng-model="vm.fieldTestPagerEntity.longMinJade"
+                    min="0"/>
+            <div ng-show="editForm.longMinJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinJade.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.longMaxJade" for="field_longMaxJade">Long Max Jade</label>
+            <input type="number" class="form-control" name="longMaxJade" id="field_longMaxJade"
+                    ng-model="vm.fieldTestPagerEntity.longMaxJade"
+                    max="100"/>
+            <div ng-show="editForm.longMaxJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxJade.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.floatJade" for="field_floatJade">Float Jade</label>
+            <input type="number" class="form-control" name="floatJade" id="field_floatJade"
+                    ng-model="vm.fieldTestPagerEntity.floatJade"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.floatRequiredJade" for="field_floatRequiredJade">Float Required Jade</label>
+            <input type="number" class="form-control" name="floatRequiredJade" id="field_floatRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.floatRequiredJade"
+                    required/>
+            <div ng-show="editForm.floatRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.floatMinJade" for="field_floatMinJade">Float Min Jade</label>
+            <input type="number" class="form-control" name="floatMinJade" id="field_floatMinJade"
+                    ng-model="vm.fieldTestPagerEntity.floatMinJade"
+                    min="0"/>
+            <div ng-show="editForm.floatMinJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinJade.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.floatMaxJade" for="field_floatMaxJade">Float Max Jade</label>
+            <input type="number" class="form-control" name="floatMaxJade" id="field_floatMaxJade"
+                    ng-model="vm.fieldTestPagerEntity.floatMaxJade"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxJade.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.doubleRequiredJade" for="field_doubleRequiredJade">Double Required Jade</label>
+            <input type="number" class="form-control" name="doubleRequiredJade" id="field_doubleRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.doubleRequiredJade"
+                    required/>
+            <div ng-show="editForm.doubleRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.doubleMinJade" for="field_doubleMinJade">Double Min Jade</label>
+            <input type="number" class="form-control" name="doubleMinJade" id="field_doubleMinJade"
+                    ng-model="vm.fieldTestPagerEntity.doubleMinJade"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinJade.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.doubleMaxJade" for="field_doubleMaxJade">Double Max Jade</label>
+            <input type="number" class="form-control" name="doubleMaxJade" id="field_doubleMaxJade"
+                    ng-model="vm.fieldTestPagerEntity.doubleMaxJade"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxJade.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalRequiredJade" for="field_bigDecimalRequiredJade">Big Decimal Required Jade</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredJade" id="field_bigDecimalRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.bigDecimalRequiredJade"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalMinJade" for="field_bigDecimalMinJade">Big Decimal Min Jade</label>
+            <input type="number" class="form-control" name="bigDecimalMinJade" id="field_bigDecimalMinJade"
+                    ng-model="vm.fieldTestPagerEntity.bigDecimalMinJade"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinJade.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalMaxJade" for="field_bigDecimalMaxJade">Big Decimal Max Jade</label>
+            <input type="number" class="form-control" name="bigDecimalMaxJade" id="field_bigDecimalMaxJade"
+                    ng-model="vm.fieldTestPagerEntity.bigDecimalMaxJade"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxJade.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxJade.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.localDateJade" for="field_localDateJade">Local Date Jade</label>
+                <div class="input-group">
+                    <input id="field_localDateJade" type="text" class="form-control" name="localDateJade" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestPagerEntity.localDateJade" is-open="vm.datePickerOpenStatus.localDateJade"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateJade')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.localDateRequiredJade" for="field_localDateRequiredJade">Local Date Required Jade</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredJade" type="text" class="form-control" name="localDateRequiredJade" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestPagerEntity.localDateRequiredJade" is-open="vm.datePickerOpenStatus.localDateRequiredJade"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredJade')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.zonedDateTimeJade" for="field_zonedDateTimeJade">Zoned Date Time Jade</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeJade" type="text" class="form-control" name="zonedDateTimeJade" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestPagerEntity.zonedDateTimeJade" is-open="vm.datePickerOpenStatus.zonedDateTimeJade"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeJade')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.zonedDateTimeRequiredJade" for="field_zonedDateTimeRequiredJade">Zoned Date Time Required Jade</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredJade" type="text" class="form-control" name="zonedDateTimeRequiredJade" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestPagerEntity.zonedDateTimeRequiredJade" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredJade"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredJade')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredJade.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.booleanJade" for="field_booleanJade">Boolean Jade</label>
+                <input type="checkbox" name="booleanJade" id="field_booleanJade"
+                          ng-model="vm.fieldTestPagerEntity.booleanJade"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.booleanRequiredJade" for="field_booleanRequiredJade">Boolean Required Jade</label>
+                <input type="checkbox" name="booleanRequiredJade" id="field_booleanRequiredJade"
+                          ng-model="vm.fieldTestPagerEntity.booleanRequiredJade"/>
+            <div ng-show="editForm.booleanRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.enumJade" for="field_enumJade">Enum Jade</label>
+            <select class="form-control" name="enumJade" ng-model="vm.fieldTestPagerEntity.enumJade" id="field_enumJade">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.enumRequiredJade" for="field_enumRequiredJade">Enum Required Jade</label>
+            <select class="form-control" name="enumRequiredJade" ng-model="vm.fieldTestPagerEntity.enumRequiredJade" id="field_enumRequiredJade" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageJade($file, vm.fieldTestPagerEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageJade" for="field_byteImageJade">Byte Image Jade</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + vm.fieldTestPagerEntity.byteImageJade}}" style="max-height: 100px;" ng-if="vm.fieldTestPagerEntity.byteImageJade" alt="fieldTestPagerEntity image"/>
+                <div ng-if="vm.fieldTestPagerEntity.byteImageJade" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteImageJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteImageJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteImageJade=null;vm.fieldTestPagerEntity.byteImageJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageJade($file, vm.fieldTestPagerEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageJade" id="field_byteImageJade"
+                    ng-model="vm.fieldTestPagerEntity.byteImageJade"
+                    />
+            <input type="hidden" class="form-control" name="byteImageJadeContentType" id="field_byteImageJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteImageJadeContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredJade($file, vm.fieldTestPagerEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageRequiredJade" for="field_byteImageRequiredJade">Byte Image Required Jade</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + vm.fieldTestPagerEntity.byteImageRequiredJade}}" style="max-height: 100px;" ng-if="vm.fieldTestPagerEntity.byteImageRequiredJade" alt="fieldTestPagerEntity image"/>
+                <div ng-if="vm.fieldTestPagerEntity.byteImageRequiredJade" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteImageRequiredJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteImageRequiredJade=null;vm.fieldTestPagerEntity.byteImageRequiredJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredJade($file, vm.fieldTestPagerEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredJade" id="field_byteImageRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.byteImageRequiredJade"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredJadeContentType" id="field_byteImageRequiredJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteImageRequiredJadeContentType" />
+            <div ng-show="editForm.byteImageRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesJade($file, vm.fieldTestPagerEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageMinbytesJade" for="field_byteImageMinbytesJade">Byte Image Minbytes Jade</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + vm.fieldTestPagerEntity.byteImageMinbytesJade}}" style="max-height: 100px;" ng-if="vm.fieldTestPagerEntity.byteImageMinbytesJade" alt="fieldTestPagerEntity image"/>
+                <div ng-if="vm.fieldTestPagerEntity.byteImageMinbytesJade" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteImageMinbytesJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteImageMinbytesJade=null;vm.fieldTestPagerEntity.byteImageMinbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesJade($file, vm.fieldTestPagerEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesJade" id="field_byteImageMinbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteImageMinbytesJade"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesJadeContentType" id="field_byteImageMinbytesJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteImageMinbytesJadeContentType" />
+            <div ng-show="editForm.byteImageMinbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesJade.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesJade($file, vm.fieldTestPagerEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageMaxbytesJade" for="field_byteImageMaxbytesJade">Byte Image Maxbytes Jade</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + vm.fieldTestPagerEntity.byteImageMaxbytesJade}}" style="max-height: 100px;" ng-if="vm.fieldTestPagerEntity.byteImageMaxbytesJade" alt="fieldTestPagerEntity image"/>
+                <div ng-if="vm.fieldTestPagerEntity.byteImageMaxbytesJade" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteImageMaxbytesJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteImageMaxbytesJade=null;vm.fieldTestPagerEntity.byteImageMaxbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesJade($file, vm.fieldTestPagerEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesJade" id="field_byteImageMaxbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteImageMaxbytesJade"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesJadeContentType" id="field_byteImageMaxbytesJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteImageMaxbytesJadeContentType" />
+            <div ng-show="editForm.byteImageMaxbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesJade.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyJade($file, vm.fieldTestPagerEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyJade" for="field_byteAnyJade">Byte Any Jade</label>
+            <div>
+                <div ng-if="vm.fieldTestPagerEntity.byteAnyJade" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPagerEntity.byteAnyJadeContentType, vm.fieldTestPagerEntity.byteAnyJade)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteAnyJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteAnyJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteAnyJade=null;vm.fieldTestPagerEntity.byteAnyJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyJade($file, vm.fieldTestPagerEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyJade" id="field_byteAnyJade"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyJade"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyJadeContentType" id="field_byteAnyJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyJadeContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredJade($file, vm.fieldTestPagerEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyRequiredJade" for="field_byteAnyRequiredJade">Byte Any Required Jade</label>
+            <div>
+                <div ng-if="vm.fieldTestPagerEntity.byteAnyRequiredJade" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPagerEntity.byteAnyRequiredJadeContentType, vm.fieldTestPagerEntity.byteAnyRequiredJade)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteAnyRequiredJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteAnyRequiredJade=null;vm.fieldTestPagerEntity.byteAnyRequiredJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredJade($file, vm.fieldTestPagerEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredJade" id="field_byteAnyRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyRequiredJade"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredJadeContentType" id="field_byteAnyRequiredJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyRequiredJadeContentType" />
+            <div ng-show="editForm.byteAnyRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesJade($file, vm.fieldTestPagerEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyMinbytesJade" for="field_byteAnyMinbytesJade">Byte Any Minbytes Jade</label>
+            <div>
+                <div ng-if="vm.fieldTestPagerEntity.byteAnyMinbytesJade" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPagerEntity.byteAnyMinbytesJadeContentType, vm.fieldTestPagerEntity.byteAnyMinbytesJade)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteAnyMinbytesJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteAnyMinbytesJade=null;vm.fieldTestPagerEntity.byteAnyMinbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesJade($file, vm.fieldTestPagerEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesJade" id="field_byteAnyMinbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyMinbytesJade"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesJadeContentType" id="field_byteAnyMinbytesJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyMinbytesJadeContentType" />
+            <div ng-show="editForm.byteAnyMinbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesJade.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesJade($file, vm.fieldTestPagerEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyMaxbytesJade" for="field_byteAnyMaxbytesJade">Byte Any Maxbytes Jade</label>
+            <div>
+                <div ng-if="vm.fieldTestPagerEntity.byteAnyMaxbytesJade" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, vm.fieldTestPagerEntity.byteAnyMaxbytesJade)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{vm.byteSize(vm.fieldTestPagerEntity.byteAnyMaxbytesJade)}}</span>
+                    <button type="button" ng-click="vm.fieldTestPagerEntity.byteAnyMaxbytesJade=null;vm.fieldTestPagerEntity.byteAnyMaxbytesJadeContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesJade($file, vm.fieldTestPagerEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesJade" id="field_byteAnyMaxbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyMaxbytesJade"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesJadeContentType" id="field_byteAnyMaxbytesJadeContentType"
+                    ng-model="vm.fieldTestPagerEntity.byteAnyMaxbytesJadeContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesJade.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextJade" for="field_byteTextJade">Byte Text Jade</label>
+                <textarea class="form-control" name="byteTextJade" id="field_byteTextJade"
+                    ng-model="vm.fieldTestPagerEntity.byteTextJade" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextRequiredJade" for="field_byteTextRequiredJade">Byte Text Required Jade</label>
+                <textarea class="form-control" name="byteTextRequiredJade" id="field_byteTextRequiredJade"
+                    ng-model="vm.fieldTestPagerEntity.byteTextRequiredJade" required></textarea>
+            <div ng-show="editForm.byteTextRequiredJade.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredJade.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextMinbytesJade" for="field_byteTextMinbytesJade">Byte Text Minbytes Jade</label>
+                <textarea class="form-control" name="byteTextMinbytesJade" id="field_byteTextMinbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteTextMinbytesJade" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesJade.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextMaxbytesJade" for="field_byteTextMaxbytesJade">Byte Text Maxbytes Jade</label>
+                <textarea class="form-control" name="byteTextMaxbytesJade" id="field_byteTextMaxbytesJade"
+                    ng-model="vm.fieldTestPagerEntity.byteTextMaxbytesJade" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesJade.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesJade.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

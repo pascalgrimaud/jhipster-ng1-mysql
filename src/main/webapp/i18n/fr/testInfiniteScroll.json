@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testInfiniteScroll" : {
+            "home": {
+                "title": "TestInfiniteScrolls",
+                "createLabel": "Créer un nouveau Test Infinite Scroll",
+                "createOrEditLabel": "Créer ou éditer un Test Infinite Scroll"
+            },
+            "created": "Un nouveau Test Infinite Scroll a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Infinite Scroll avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Infinite Scroll avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Infinite Scroll {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Infinite Scroll"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

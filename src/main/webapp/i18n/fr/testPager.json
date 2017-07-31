@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testPager" : {
+            "home": {
+                "title": "TestPagers",
+                "createLabel": "Créer un nouveau Test Pager",
+                "createOrEditLabel": "Créer ou éditer un Test Pager"
+            },
+            "created": "Un nouveau Test Pager a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Pager avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Pager avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Pager {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Pager"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

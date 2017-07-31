@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestInfiniteScrollEntityLabel" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.home.createOrEditLabel">Create or edit a Field Test Infinite Scroll Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestInfiniteScrollEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringHugo" for="field_stringHugo">String Hugo</label>
+            <input type="text" class="form-control" name="stringHugo" id="field_stringHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.stringHugo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringRequiredHugo" for="field_stringRequiredHugo">String Required Hugo</label>
+            <input type="text" class="form-control" name="stringRequiredHugo" id="field_stringRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.stringRequiredHugo"
+                    required/>
+            <div ng-show="editForm.stringRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringMinlengthHugo" for="field_stringMinlengthHugo">String Minlength Hugo</label>
+            <input type="text" class="form-control" name="stringMinlengthHugo" id="field_stringMinlengthHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.stringMinlengthHugo"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthHugo.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringMaxlengthHugo" for="field_stringMaxlengthHugo">String Maxlength Hugo</label>
+            <input type="text" class="form-control" name="stringMaxlengthHugo" id="field_stringMaxlengthHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.stringMaxlengthHugo"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthHugo.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.stringPatternHugo" for="field_stringPatternHugo">String Pattern Hugo</label>
+            <input type="text" class="form-control" name="stringPatternHugo" id="field_stringPatternHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.stringPatternHugo"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternHugo.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Hugo">
+                    This field should follow pattern for "String Pattern Hugo".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerHugo" for="field_integerHugo">Integer Hugo</label>
+            <input type="number" class="form-control" name="integerHugo" id="field_integerHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.integerHugo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerRequiredHugo" for="field_integerRequiredHugo">Integer Required Hugo</label>
+            <input type="number" class="form-control" name="integerRequiredHugo" id="field_integerRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.integerRequiredHugo"
+                    required/>
+            <div ng-show="editForm.integerRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerMinHugo" for="field_integerMinHugo">Integer Min Hugo</label>
+            <input type="number" class="form-control" name="integerMinHugo" id="field_integerMinHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.integerMinHugo"
+                    min="0"/>
+            <div ng-show="editForm.integerMinHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinHugo.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.integerMaxHugo" for="field_integerMaxHugo">Integer Max Hugo</label>
+            <input type="number" class="form-control" name="integerMaxHugo" id="field_integerMaxHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.integerMaxHugo"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxHugo.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longHugo" for="field_longHugo">Long Hugo</label>
+            <input type="number" class="form-control" name="longHugo" id="field_longHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.longHugo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longRequiredHugo" for="field_longRequiredHugo">Long Required Hugo</label>
+            <input type="number" class="form-control" name="longRequiredHugo" id="field_longRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.longRequiredHugo"
+                    required/>
+            <div ng-show="editForm.longRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longMinHugo" for="field_longMinHugo">Long Min Hugo</label>
+            <input type="number" class="form-control" name="longMinHugo" id="field_longMinHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.longMinHugo"
+                    min="0"/>
+            <div ng-show="editForm.longMinHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinHugo.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.longMaxHugo" for="field_longMaxHugo">Long Max Hugo</label>
+            <input type="number" class="form-control" name="longMaxHugo" id="field_longMaxHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.longMaxHugo"
+                    max="100"/>
+            <div ng-show="editForm.longMaxHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxHugo.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatHugo" for="field_floatHugo">Float Hugo</label>
+            <input type="number" class="form-control" name="floatHugo" id="field_floatHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.floatHugo"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatRequiredHugo" for="field_floatRequiredHugo">Float Required Hugo</label>
+            <input type="number" class="form-control" name="floatRequiredHugo" id="field_floatRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.floatRequiredHugo"
+                    required/>
+            <div ng-show="editForm.floatRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatMinHugo" for="field_floatMinHugo">Float Min Hugo</label>
+            <input type="number" class="form-control" name="floatMinHugo" id="field_floatMinHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.floatMinHugo"
+                    min="0"/>
+            <div ng-show="editForm.floatMinHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinHugo.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.floatMaxHugo" for="field_floatMaxHugo">Float Max Hugo</label>
+            <input type="number" class="form-control" name="floatMaxHugo" id="field_floatMaxHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.floatMaxHugo"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxHugo.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleRequiredHugo" for="field_doubleRequiredHugo">Double Required Hugo</label>
+            <input type="number" class="form-control" name="doubleRequiredHugo" id="field_doubleRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.doubleRequiredHugo"
+                    required/>
+            <div ng-show="editForm.doubleRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleMinHugo" for="field_doubleMinHugo">Double Min Hugo</label>
+            <input type="number" class="form-control" name="doubleMinHugo" id="field_doubleMinHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.doubleMinHugo"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinHugo.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.doubleMaxHugo" for="field_doubleMaxHugo">Double Max Hugo</label>
+            <input type="number" class="form-control" name="doubleMaxHugo" id="field_doubleMaxHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.doubleMaxHugo"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxHugo.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo" for="field_bigDecimalRequiredHugo">Big Decimal Required Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredHugo" id="field_bigDecimalRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.bigDecimalRequiredHugo"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalMinHugo" for="field_bigDecimalMinHugo">Big Decimal Min Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalMinHugo" id="field_bigDecimalMinHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.bigDecimalMinHugo"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinHugo.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.bigDecimalMaxHugo" for="field_bigDecimalMaxHugo">Big Decimal Max Hugo</label>
+            <input type="number" class="form-control" name="bigDecimalMaxHugo" id="field_bigDecimalMaxHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.bigDecimalMaxHugo"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxHugo.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxHugo.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.localDateHugo" for="field_localDateHugo">Local Date Hugo</label>
+                <div class="input-group">
+                    <input id="field_localDateHugo" type="text" class="form-control" name="localDateHugo" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestInfiniteScrollEntity.localDateHugo" is-open="vm.datePickerOpenStatus.localDateHugo"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateHugo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.localDateRequiredHugo" for="field_localDateRequiredHugo">Local Date Required Hugo</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredHugo" type="text" class="form-control" name="localDateRequiredHugo" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestInfiniteScrollEntity.localDateRequiredHugo" is-open="vm.datePickerOpenStatus.localDateRequiredHugo"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredHugo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.zonedDateTimeHugo" for="field_zonedDateTimeHugo">Zoned Date Time Hugo</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeHugo" type="text" class="form-control" name="zonedDateTimeHugo" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestInfiniteScrollEntity.zonedDateTimeHugo" is-open="vm.datePickerOpenStatus.zonedDateTimeHugo"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeHugo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo" for="field_zonedDateTimeRequiredHugo">Zoned Date Time Required Hugo</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredHugo" type="text" class="form-control" name="zonedDateTimeRequiredHugo" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestInfiniteScrollEntity.zonedDateTimeRequiredHugo" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredHugo"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredHugo')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredHugo.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.booleanHugo" for="field_booleanHugo">Boolean Hugo</label>
+                <input type="checkbox" name="booleanHugo" id="field_booleanHugo"
+                          ng-model="vm.fieldTestInfiniteScrollEntity.booleanHugo"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.booleanRequiredHugo" for="field_booleanRequiredHugo">Boolean Required Hugo</label>
+                <input type="checkbox" name="booleanRequiredHugo" id="field_booleanRequiredHugo"
+                          ng-model="vm.fieldTestInfiniteScrollEntity.booleanRequiredHugo"/>
+            <div ng-show="editForm.booleanRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.enumHugo" for="field_enumHugo">Enum Hugo</label>
+            <select class="form-control" name="enumHugo" ng-model="vm.fieldTestInfiniteScrollEntity.enumHugo" id="field_enumHugo">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.enumRequiredHugo" for="field_enumRequiredHugo">Enum Required Hugo</label>
+            <select class="form-control" name="enumRequiredHugo" ng-model="vm.fieldTestInfiniteScrollEntity.enumRequiredHugo" id="field_enumRequiredHugo" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageHugo($file, vm.fieldTestInfiniteScrollEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageHugo" for="field_byteImageHugo">Byte Image Hugo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestInfiniteScrollEntity.byteImageHugoContentType + ';base64,' + vm.fieldTestInfiniteScrollEntity.byteImageHugo}}" style="max-height: 100px;" ng-if="vm.fieldTestInfiniteScrollEntity.byteImageHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteImageHugo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteImageHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteImageHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteImageHugo=null;vm.fieldTestInfiniteScrollEntity.byteImageHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageHugo($file, vm.fieldTestInfiniteScrollEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageHugo" id="field_byteImageHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageHugo"
+                    />
+            <input type="hidden" class="form-control" name="byteImageHugoContentType" id="field_byteImageHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageHugoContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredHugo($file, vm.fieldTestInfiniteScrollEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageRequiredHugo" for="field_byteImageRequiredHugo">Byte Image Required Hugo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType + ';base64,' + vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo}}" style="max-height: 100px;" ng-if="vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo=null;vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredHugo($file, vm.fieldTestInfiniteScrollEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredHugo" id="field_byteImageRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugo"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredHugoContentType" id="field_byteImageRequiredHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageRequiredHugoContentType" />
+            <div ng-show="editForm.byteImageRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" for="field_byteImageMinbytesHugo">Byte Image Minbytes Hugo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType + ';base64,' + vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo}}" style="max-height: 100px;" ng-if="vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo=null;vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesHugo" id="field_byteImageMinbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugo"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesHugoContentType" id="field_byteImageMinbytesHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageMinbytesHugoContentType" />
+            <div ng-show="editForm.byteImageMinbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesHugo.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" for="field_byteImageMaxbytesHugo">Byte Image Maxbytes Hugo</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType + ';base64,' + vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo}}" style="max-height: 100px;" ng-if="vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" alt="fieldTestInfiniteScrollEntity image"/>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo=null;vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesHugo" id="field_byteImageMaxbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugo"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesHugoContentType" id="field_byteImageMaxbytesHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteImageMaxbytesHugoContentType" />
+            <div ng-show="editForm.byteImageMaxbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesHugo.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyHugo($file, vm.fieldTestInfiniteScrollEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyHugo" for="field_byteAnyHugo">Byte Any Hugo</label>
+            <div>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteAnyHugo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestInfiniteScrollEntity.byteAnyHugoContentType, vm.fieldTestInfiniteScrollEntity.byteAnyHugo)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteAnyHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteAnyHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteAnyHugo=null;vm.fieldTestInfiniteScrollEntity.byteAnyHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyHugo($file, vm.fieldTestInfiniteScrollEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyHugo" id="field_byteAnyHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyHugo"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyHugoContentType" id="field_byteAnyHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyHugoContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredHugo($file, vm.fieldTestInfiniteScrollEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" for="field_byteAnyRequiredHugo">Byte Any Required Hugo</label>
+            <div>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType, vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo=null;vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredHugo($file, vm.fieldTestInfiniteScrollEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredHugo" id="field_byteAnyRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugo"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredHugoContentType" id="field_byteAnyRequiredHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyRequiredHugoContentType" />
+            <div ng-show="editForm.byteAnyRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesHugo($file, vm.fieldTestInfiniteScrollEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" for="field_byteAnyMinbytesHugo">Byte Any Minbytes Hugo</label>
+            <div>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType, vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo=null;vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesHugo" id="field_byteAnyMinbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugo"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesHugoContentType" id="field_byteAnyMinbytesHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyMinbytesHugoContentType" />
+            <div ng-show="editForm.byteAnyMinbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesHugo.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesHugo($file, vm.fieldTestInfiniteScrollEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" for="field_byteAnyMaxbytesHugo">Byte Any Maxbytes Hugo</label>
+            <div>
+                <div ng-if="vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType, vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType}}, {{vm.byteSize(vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo)}}</span>
+                    <button type="button" ng-click="vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo=null;vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesHugo($file, vm.fieldTestInfiniteScrollEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesHugo" id="field_byteAnyMaxbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugo"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesHugoContentType" id="field_byteAnyMaxbytesHugoContentType"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteAnyMaxbytesHugoContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesHugo.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextHugo" for="field_byteTextHugo">Byte Text Hugo</label>
+                <textarea class="form-control" name="byteTextHugo" id="field_byteTextHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteTextHugo" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextRequiredHugo" for="field_byteTextRequiredHugo">Byte Text Required Hugo</label>
+                <textarea class="form-control" name="byteTextRequiredHugo" id="field_byteTextRequiredHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteTextRequiredHugo" required></textarea>
+            <div ng-show="editForm.byteTextRequiredHugo.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredHugo.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextMinbytesHugo" for="field_byteTextMinbytesHugo">Byte Text Minbytes Hugo</label>
+                <textarea class="form-control" name="byteTextMinbytesHugo" id="field_byteTextMinbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteTextMinbytesHugo" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesHugo.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo" for="field_byteTextMaxbytesHugo">Byte Text Maxbytes Hugo</label>
+                <textarea class="form-control" name="byteTextMaxbytesHugo" id="field_byteTextMaxbytesHugo"
+                    ng-model="vm.fieldTestInfiniteScrollEntity.byteTextMaxbytesHugo" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesHugo.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesHugo.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

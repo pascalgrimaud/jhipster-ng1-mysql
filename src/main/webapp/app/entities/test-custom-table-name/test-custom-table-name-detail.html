@@ -1,0 +1,37 @@
+
+<div>
+    <h2><span data-translate="travisMysqlApp.testCustomTableName.detail.title">Test Custom Table Name</span> {{vm.testCustomTableName.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="travisMysqlApp.testCustomTableName.testEntity">Test Entity</span></dt>
+        <dd>
+            <a ui-sref="test-entity-detail({id:vm.testCustomTableName.testEntity.id})">{{vm.testCustomTableName.testEntity.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testCustomTableName.userOneToMany">User One To Many</span></dt>
+        <dd>
+            {{vm.testCustomTableName.userOneToMany.login}}
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testCustomTableName.userManyToMany">User Many To Many</span></dt>
+        <dd>
+            <span ng-repeat="userManyToMany in vm.testCustomTableName.userManyToManies">
+                {{userManyToMany.login}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testCustomTableName.userOneToOne">User One To One</span></dt>
+        <dd>
+            {{vm.testCustomTableName.userOneToOne.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="test-custom-table-name-detail.edit({id:vm.testCustomTableName.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

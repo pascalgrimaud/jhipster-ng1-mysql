@@ -1,0 +1,51 @@
+
+<div>
+    <h2><span data-translate="travisMysqlApp.testOneToOne.detail.title">Test One To One</span> {{vm.testOneToOne.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testEntity">Test Entity</span></dt>
+        <dd>
+            <a ui-sref="test-entity-detail({id:vm.testOneToOne.testEntity.id})">{{vm.testOneToOne.testEntity.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testMapstruct">Test Mapstruct</span></dt>
+        <dd>
+            <a ui-sref="test-mapstruct-detail({id:vm.testOneToOne.testMapstruct.id})">{{vm.testOneToOne.testMapstruct.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testServiceClass">Test Service Class</span></dt>
+        <dd>
+            <a ui-sref="test-service-class-detail({id:vm.testOneToOne.testServiceClass.id})">{{vm.testOneToOne.testServiceClass.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testServiceImpl">Test Service Impl</span></dt>
+        <dd>
+            <a ui-sref="test-service-impl-detail({id:vm.testOneToOne.testServiceImpl.id})">{{vm.testOneToOne.testServiceImpl.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testInfiniteScroll">Test Infinite Scroll</span></dt>
+        <dd>
+            <a ui-sref="test-infinite-scroll-detail({id:vm.testOneToOne.testInfiniteScroll.id})">{{vm.testOneToOne.testInfiniteScroll.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testPager">Test Pager</span></dt>
+        <dd>
+            <a ui-sref="test-pager-detail({id:vm.testOneToOne.testPager.id})">{{vm.testOneToOne.testPager.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testPagination">Test Pagination</span></dt>
+        <dd>
+            <a ui-sref="test-pagination-detail({id:vm.testOneToOne.testPagination.id})">{{vm.testOneToOne.testPagination.id}}</a>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testOneToOne.testCustomTableName">Test Custom Table Name</span></dt>
+        <dd>
+            <a ui-sref="test-custom-table-name-detail({id:vm.testOneToOne.testCustomTableName.id})">{{vm.testOneToOne.testCustomTableName.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="test-one-to-one-detail.edit({id:vm.testOneToOne.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

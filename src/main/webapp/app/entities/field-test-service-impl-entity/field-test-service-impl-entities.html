@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestServiceImplEntity.home.title">Field Test Service Impl Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-service-impl-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestServiceImplEntity.home.createLabel">
+                        Create new Field Test Service Impl Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMika">String Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringRequiredMika">String Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMinlengthMika">String Minlength Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMaxlengthMika">String Maxlength Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringPatternMika">String Pattern Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMika">Integer Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerRequiredMika">Integer Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMinMika">Integer Min Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMaxMika">Integer Max Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMika">Long Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.longRequiredMika">Long Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMinMika">Long Min Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMaxMika">Long Max Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMika">Float Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatRequiredMika">Float Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMinMika">Float Min Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMaxMika">Float Max Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleRequiredMika">Double Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleMinMika">Double Min Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleMaxMika">Double Max Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalRequiredMika">Big Decimal Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalMinMika">Big Decimal Min Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalMaxMika">Big Decimal Max Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.localDateMika">Local Date Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.localDateRequiredMika">Local Date Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.zonedDateTimeMika">Zoned Date Time Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.zonedDateTimeRequiredMika">Zoned Date Time Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.booleanMika">Boolean Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.booleanRequiredMika">Boolean Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.enumMika">Enum Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.enumRequiredMika">Enum Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMika">Byte Image Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageRequiredMika">Byte Image Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMinbytesMika">Byte Image Minbytes Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMaxbytesMika">Byte Image Maxbytes Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMika">Byte Any Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyRequiredMika">Byte Any Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMinbytesMika">Byte Any Minbytes Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMaxbytesMika">Byte Any Maxbytes Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMika">Byte Text Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextRequiredMika">Byte Text Required Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMinbytesMika">Byte Text Minbytes Mika</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMaxbytesMika">Byte Text Maxbytes Mika</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestServiceImplEntity in vm.fieldTestServiceImplEntities track by fieldTestServiceImplEntity.id">
+                    <td><a ui-sref="field-test-service-impl-entity-detail({id:fieldTestServiceImplEntity.id})">{{fieldTestServiceImplEntity.id}}</a></td>
+                    <td>{{fieldTestServiceImplEntity.stringMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.stringRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.stringMinlengthMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.stringMaxlengthMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.stringPatternMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.integerMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.integerRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.integerMinMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.integerMaxMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.longMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.longRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.longMinMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.longMaxMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.floatMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.floatRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.floatMinMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.floatMaxMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.doubleRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.doubleMinMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.doubleMaxMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.bigDecimalRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.bigDecimalMinMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.bigDecimalMaxMika}}</td>
+                        <td>{{fieldTestServiceImplEntity.localDateMika | date:'mediumDate'}}</td>
+                        <td>{{fieldTestServiceImplEntity.localDateRequiredMika | date:'mediumDate'}}</td>
+                    <td>{{fieldTestServiceImplEntity.zonedDateTimeMika | date:'medium'}}</td>
+                    <td>{{fieldTestServiceImplEntity.zonedDateTimeRequiredMika | date:'medium'}}</td>
+                    <td>{{fieldTestServiceImplEntity.booleanMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.booleanRequiredMika}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestServiceImplEntity.enumMika}}">{{fieldTestServiceImplEntity.enumMika}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestServiceImplEntity.enumRequiredMika}}">{{fieldTestServiceImplEntity.enumRequiredMika}}</td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteImageMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteImageMikaContentType, fieldTestServiceImplEntity.byteImageMika)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMika}}" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceImplEntity.byteImageMika">{{fieldTestServiceImplEntity.byteImageMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteImageMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteImageRequiredMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteImageRequiredMikaContentType, fieldTestServiceImplEntity.byteImageRequiredMika)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageRequiredMika}}" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceImplEntity.byteImageRequiredMika">{{fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteImageRequiredMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteImageMinbytesMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteImageMinbytesMikaContentType, fieldTestServiceImplEntity.byteImageMinbytesMika)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMinbytesMika}}" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceImplEntity.byteImageMinbytesMika">{{fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteImageMinbytesMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteImageMaxbytesMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType, fieldTestServiceImplEntity.byteImageMaxbytesMika)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + fieldTestServiceImplEntity.byteImageMaxbytesMika}}" style="max-height: 30px;" alt="fieldTestServiceImplEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceImplEntity.byteImageMaxbytesMika">{{fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteImageMaxbytesMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteAnyMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteAnyMikaContentType, fieldTestServiceImplEntity.byteAnyMika)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceImplEntity.byteAnyMika">{{fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteAnyMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteAnyRequiredMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, fieldTestServiceImplEntity.byteAnyRequiredMika)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceImplEntity.byteAnyRequiredMika">{{fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteAnyRequiredMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteAnyMinbytesMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMinbytesMika)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceImplEntity.byteAnyMinbytesMika">{{fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteAnyMinbytesMika)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceImplEntity.byteAnyMaxbytesMika" ng-click="vm.openFile(fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, fieldTestServiceImplEntity.byteAnyMaxbytesMika)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceImplEntity.byteAnyMaxbytesMika">{{fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{vm.byteSize(fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}</span>
+                    </td>
+                    <td>{{fieldTestServiceImplEntity.byteTextMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.byteTextRequiredMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.byteTextMinbytesMika}}</td>
+                    <td>{{fieldTestServiceImplEntity.byteTextMaxbytesMika}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-service-impl-entity-detail({id:fieldTestServiceImplEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-service-impl-entity.edit({id:fieldTestServiceImplEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-service-impl-entity.delete({id:fieldTestServiceImplEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

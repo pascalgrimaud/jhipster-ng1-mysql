@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testServiceImpl" : {
+            "home": {
+                "title": "TestServiceImpls",
+                "createLabel": "Créer un nouveau Test Service Impl",
+                "createOrEditLabel": "Créer ou éditer un Test Service Impl"
+            },
+            "created": "Un nouveau Test Service Impl a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Service Impl avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Service Impl avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Service Impl {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Service Impl"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

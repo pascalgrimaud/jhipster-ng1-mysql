@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestEntityLabel" data-translate="travisMysqlApp.fieldTestEntity.home.createOrEditLabel">Create or edit a Field Test Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.stringTom" for="field_stringTom">String Tom</label>
+            <input type="text" class="form-control" name="stringTom" id="field_stringTom"
+                    ng-model="vm.fieldTestEntity.stringTom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.stringRequiredTom" for="field_stringRequiredTom">String Required Tom</label>
+            <input type="text" class="form-control" name="stringRequiredTom" id="field_stringRequiredTom"
+                    ng-model="vm.fieldTestEntity.stringRequiredTom"
+                    required/>
+            <div ng-show="editForm.stringRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.stringMinlengthTom" for="field_stringMinlengthTom">String Minlength Tom</label>
+            <input type="text" class="form-control" name="stringMinlengthTom" id="field_stringMinlengthTom"
+                    ng-model="vm.fieldTestEntity.stringMinlengthTom"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthTom.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.stringMaxlengthTom" for="field_stringMaxlengthTom">String Maxlength Tom</label>
+            <input type="text" class="form-control" name="stringMaxlengthTom" id="field_stringMaxlengthTom"
+                    ng-model="vm.fieldTestEntity.stringMaxlengthTom"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthTom.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.stringPatternTom" for="field_stringPatternTom">String Pattern Tom</label>
+            <input type="text" class="form-control" name="stringPatternTom" id="field_stringPatternTom"
+                    ng-model="vm.fieldTestEntity.stringPatternTom"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternTom.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Tom">
+                    This field should follow pattern for "String Pattern Tom".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.integerTom" for="field_integerTom">Integer Tom</label>
+            <input type="number" class="form-control" name="integerTom" id="field_integerTom"
+                    ng-model="vm.fieldTestEntity.integerTom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.integerRequiredTom" for="field_integerRequiredTom">Integer Required Tom</label>
+            <input type="number" class="form-control" name="integerRequiredTom" id="field_integerRequiredTom"
+                    ng-model="vm.fieldTestEntity.integerRequiredTom"
+                    required/>
+            <div ng-show="editForm.integerRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.integerMinTom" for="field_integerMinTom">Integer Min Tom</label>
+            <input type="number" class="form-control" name="integerMinTom" id="field_integerMinTom"
+                    ng-model="vm.fieldTestEntity.integerMinTom"
+                    min="0"/>
+            <div ng-show="editForm.integerMinTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinTom.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.integerMaxTom" for="field_integerMaxTom">Integer Max Tom</label>
+            <input type="number" class="form-control" name="integerMaxTom" id="field_integerMaxTom"
+                    ng-model="vm.fieldTestEntity.integerMaxTom"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxTom.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.longTom" for="field_longTom">Long Tom</label>
+            <input type="number" class="form-control" name="longTom" id="field_longTom"
+                    ng-model="vm.fieldTestEntity.longTom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.longRequiredTom" for="field_longRequiredTom">Long Required Tom</label>
+            <input type="number" class="form-control" name="longRequiredTom" id="field_longRequiredTom"
+                    ng-model="vm.fieldTestEntity.longRequiredTom"
+                    required/>
+            <div ng-show="editForm.longRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.longMinTom" for="field_longMinTom">Long Min Tom</label>
+            <input type="number" class="form-control" name="longMinTom" id="field_longMinTom"
+                    ng-model="vm.fieldTestEntity.longMinTom"
+                    min="0"/>
+            <div ng-show="editForm.longMinTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinTom.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.longMaxTom" for="field_longMaxTom">Long Max Tom</label>
+            <input type="number" class="form-control" name="longMaxTom" id="field_longMaxTom"
+                    ng-model="vm.fieldTestEntity.longMaxTom"
+                    max="100"/>
+            <div ng-show="editForm.longMaxTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxTom.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.floatTom" for="field_floatTom">Float Tom</label>
+            <input type="number" class="form-control" name="floatTom" id="field_floatTom"
+                    ng-model="vm.fieldTestEntity.floatTom"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.floatRequiredTom" for="field_floatRequiredTom">Float Required Tom</label>
+            <input type="number" class="form-control" name="floatRequiredTom" id="field_floatRequiredTom"
+                    ng-model="vm.fieldTestEntity.floatRequiredTom"
+                    required/>
+            <div ng-show="editForm.floatRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.floatMinTom" for="field_floatMinTom">Float Min Tom</label>
+            <input type="number" class="form-control" name="floatMinTom" id="field_floatMinTom"
+                    ng-model="vm.fieldTestEntity.floatMinTom"
+                    min="0"/>
+            <div ng-show="editForm.floatMinTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinTom.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.floatMaxTom" for="field_floatMaxTom">Float Max Tom</label>
+            <input type="number" class="form-control" name="floatMaxTom" id="field_floatMaxTom"
+                    ng-model="vm.fieldTestEntity.floatMaxTom"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxTom.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.doubleRequiredTom" for="field_doubleRequiredTom">Double Required Tom</label>
+            <input type="number" class="form-control" name="doubleRequiredTom" id="field_doubleRequiredTom"
+                    ng-model="vm.fieldTestEntity.doubleRequiredTom"
+                    required/>
+            <div ng-show="editForm.doubleRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.doubleMinTom" for="field_doubleMinTom">Double Min Tom</label>
+            <input type="number" class="form-control" name="doubleMinTom" id="field_doubleMinTom"
+                    ng-model="vm.fieldTestEntity.doubleMinTom"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinTom.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.doubleMaxTom" for="field_doubleMaxTom">Double Max Tom</label>
+            <input type="number" class="form-control" name="doubleMaxTom" id="field_doubleMaxTom"
+                    ng-model="vm.fieldTestEntity.doubleMaxTom"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxTom.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.bigDecimalRequiredTom" for="field_bigDecimalRequiredTom">Big Decimal Required Tom</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredTom" id="field_bigDecimalRequiredTom"
+                    ng-model="vm.fieldTestEntity.bigDecimalRequiredTom"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.bigDecimalMinTom" for="field_bigDecimalMinTom">Big Decimal Min Tom</label>
+            <input type="number" class="form-control" name="bigDecimalMinTom" id="field_bigDecimalMinTom"
+                    ng-model="vm.fieldTestEntity.bigDecimalMinTom"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinTom.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.bigDecimalMaxTom" for="field_bigDecimalMaxTom">Big Decimal Max Tom</label>
+            <input type="number" class="form-control" name="bigDecimalMaxTom" id="field_bigDecimalMaxTom"
+                    ng-model="vm.fieldTestEntity.bigDecimalMaxTom"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxTom.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxTom.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.localDateTom" for="field_localDateTom">Local Date Tom</label>
+                <div class="input-group">
+                    <input id="field_localDateTom" type="text" class="form-control" name="localDateTom" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestEntity.localDateTom" is-open="vm.datePickerOpenStatus.localDateTom"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateTom')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.localDateRequiredTom" for="field_localDateRequiredTom">Local Date Required Tom</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredTom" type="text" class="form-control" name="localDateRequiredTom" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestEntity.localDateRequiredTom" is-open="vm.datePickerOpenStatus.localDateRequiredTom"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredTom')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.zonedDateTimeTom" for="field_zonedDateTimeTom">Zoned Date Time Tom</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeTom" type="text" class="form-control" name="zonedDateTimeTom" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestEntity.zonedDateTimeTom" is-open="vm.datePickerOpenStatus.zonedDateTimeTom"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeTom')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.zonedDateTimeRequiredTom" for="field_zonedDateTimeRequiredTom">Zoned Date Time Required Tom</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredTom" type="text" class="form-control" name="zonedDateTimeRequiredTom" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestEntity.zonedDateTimeRequiredTom" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredTom"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredTom')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredTom.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.booleanTom" for="field_booleanTom">Boolean Tom</label>
+                <input type="checkbox" name="booleanTom" id="field_booleanTom"
+                          ng-model="vm.fieldTestEntity.booleanTom"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.booleanRequiredTom" for="field_booleanRequiredTom">Boolean Required Tom</label>
+                <input type="checkbox" name="booleanRequiredTom" id="field_booleanRequiredTom"
+                          ng-model="vm.fieldTestEntity.booleanRequiredTom"/>
+            <div ng-show="editForm.booleanRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.enumTom" for="field_enumTom">Enum Tom</label>
+            <select class="form-control" name="enumTom" ng-model="vm.fieldTestEntity.enumTom" id="field_enumTom">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.enumRequiredTom" for="field_enumRequiredTom">Enum Required Tom</label>
+            <select class="form-control" name="enumRequiredTom" ng-model="vm.fieldTestEntity.enumRequiredTom" id="field_enumRequiredTom" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageTom($file, vm.fieldTestEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteImageTom" for="field_byteImageTom">Byte Image Tom</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestEntity.byteImageTomContentType + ';base64,' + vm.fieldTestEntity.byteImageTom}}" style="max-height: 100px;" ng-if="vm.fieldTestEntity.byteImageTom" alt="fieldTestEntity image"/>
+                <div ng-if="vm.fieldTestEntity.byteImageTom" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestEntity.byteImageTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteImageTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteImageTom=null;vm.fieldTestEntity.byteImageTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageTom($file, vm.fieldTestEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageTom" id="field_byteImageTom"
+                    ng-model="vm.fieldTestEntity.byteImageTom"
+                    />
+            <input type="hidden" class="form-control" name="byteImageTomContentType" id="field_byteImageTomContentType"
+                    ng-model="vm.fieldTestEntity.byteImageTomContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredTom($file, vm.fieldTestEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteImageRequiredTom" for="field_byteImageRequiredTom">Byte Image Required Tom</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestEntity.byteImageRequiredTomContentType + ';base64,' + vm.fieldTestEntity.byteImageRequiredTom}}" style="max-height: 100px;" ng-if="vm.fieldTestEntity.byteImageRequiredTom" alt="fieldTestEntity image"/>
+                <div ng-if="vm.fieldTestEntity.byteImageRequiredTom" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestEntity.byteImageRequiredTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteImageRequiredTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteImageRequiredTom=null;vm.fieldTestEntity.byteImageRequiredTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredTom($file, vm.fieldTestEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredTom" id="field_byteImageRequiredTom"
+                    ng-model="vm.fieldTestEntity.byteImageRequiredTom"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredTomContentType" id="field_byteImageRequiredTomContentType"
+                    ng-model="vm.fieldTestEntity.byteImageRequiredTomContentType" />
+            <div ng-show="editForm.byteImageRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesTom($file, vm.fieldTestEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteImageMinbytesTom" for="field_byteImageMinbytesTom">Byte Image Minbytes Tom</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestEntity.byteImageMinbytesTomContentType + ';base64,' + vm.fieldTestEntity.byteImageMinbytesTom}}" style="max-height: 100px;" ng-if="vm.fieldTestEntity.byteImageMinbytesTom" alt="fieldTestEntity image"/>
+                <div ng-if="vm.fieldTestEntity.byteImageMinbytesTom" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestEntity.byteImageMinbytesTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteImageMinbytesTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteImageMinbytesTom=null;vm.fieldTestEntity.byteImageMinbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesTom($file, vm.fieldTestEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesTom" id="field_byteImageMinbytesTom"
+                    ng-model="vm.fieldTestEntity.byteImageMinbytesTom"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesTomContentType" id="field_byteImageMinbytesTomContentType"
+                    ng-model="vm.fieldTestEntity.byteImageMinbytesTomContentType" />
+            <div ng-show="editForm.byteImageMinbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesTom.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesTom($file, vm.fieldTestEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteImageMaxbytesTom" for="field_byteImageMaxbytesTom">Byte Image Maxbytes Tom</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestEntity.byteImageMaxbytesTomContentType + ';base64,' + vm.fieldTestEntity.byteImageMaxbytesTom}}" style="max-height: 100px;" ng-if="vm.fieldTestEntity.byteImageMaxbytesTom" alt="fieldTestEntity image"/>
+                <div ng-if="vm.fieldTestEntity.byteImageMaxbytesTom" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestEntity.byteImageMaxbytesTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteImageMaxbytesTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteImageMaxbytesTom=null;vm.fieldTestEntity.byteImageMaxbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesTom($file, vm.fieldTestEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesTom" id="field_byteImageMaxbytesTom"
+                    ng-model="vm.fieldTestEntity.byteImageMaxbytesTom"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesTomContentType" id="field_byteImageMaxbytesTomContentType"
+                    ng-model="vm.fieldTestEntity.byteImageMaxbytesTomContentType" />
+            <div ng-show="editForm.byteImageMaxbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesTom.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyTom($file, vm.fieldTestEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteAnyTom" for="field_byteAnyTom">Byte Any Tom</label>
+            <div>
+                <div ng-if="vm.fieldTestEntity.byteAnyTom" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestEntity.byteAnyTomContentType, vm.fieldTestEntity.byteAnyTom)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestEntity.byteAnyTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteAnyTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteAnyTom=null;vm.fieldTestEntity.byteAnyTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyTom($file, vm.fieldTestEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyTom" id="field_byteAnyTom"
+                    ng-model="vm.fieldTestEntity.byteAnyTom"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyTomContentType" id="field_byteAnyTomContentType"
+                    ng-model="vm.fieldTestEntity.byteAnyTomContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredTom($file, vm.fieldTestEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteAnyRequiredTom" for="field_byteAnyRequiredTom">Byte Any Required Tom</label>
+            <div>
+                <div ng-if="vm.fieldTestEntity.byteAnyRequiredTom" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestEntity.byteAnyRequiredTomContentType, vm.fieldTestEntity.byteAnyRequiredTom)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestEntity.byteAnyRequiredTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteAnyRequiredTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteAnyRequiredTom=null;vm.fieldTestEntity.byteAnyRequiredTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredTom($file, vm.fieldTestEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredTom" id="field_byteAnyRequiredTom"
+                    ng-model="vm.fieldTestEntity.byteAnyRequiredTom"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredTomContentType" id="field_byteAnyRequiredTomContentType"
+                    ng-model="vm.fieldTestEntity.byteAnyRequiredTomContentType" />
+            <div ng-show="editForm.byteAnyRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesTom($file, vm.fieldTestEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteAnyMinbytesTom" for="field_byteAnyMinbytesTom">Byte Any Minbytes Tom</label>
+            <div>
+                <div ng-if="vm.fieldTestEntity.byteAnyMinbytesTom" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestEntity.byteAnyMinbytesTomContentType, vm.fieldTestEntity.byteAnyMinbytesTom)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestEntity.byteAnyMinbytesTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteAnyMinbytesTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteAnyMinbytesTom=null;vm.fieldTestEntity.byteAnyMinbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesTom($file, vm.fieldTestEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesTom" id="field_byteAnyMinbytesTom"
+                    ng-model="vm.fieldTestEntity.byteAnyMinbytesTom"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesTomContentType" id="field_byteAnyMinbytesTomContentType"
+                    ng-model="vm.fieldTestEntity.byteAnyMinbytesTomContentType" />
+            <div ng-show="editForm.byteAnyMinbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesTom.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesTom($file, vm.fieldTestEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteAnyMaxbytesTom" for="field_byteAnyMaxbytesTom">Byte Any Maxbytes Tom</label>
+            <div>
+                <div ng-if="vm.fieldTestEntity.byteAnyMaxbytesTom" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestEntity.byteAnyMaxbytesTomContentType, vm.fieldTestEntity.byteAnyMaxbytesTom)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestEntity.byteAnyMaxbytesTomContentType}}, {{vm.byteSize(vm.fieldTestEntity.byteAnyMaxbytesTom)}}</span>
+                    <button type="button" ng-click="vm.fieldTestEntity.byteAnyMaxbytesTom=null;vm.fieldTestEntity.byteAnyMaxbytesTomContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesTom($file, vm.fieldTestEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesTom" id="field_byteAnyMaxbytesTom"
+                    ng-model="vm.fieldTestEntity.byteAnyMaxbytesTom"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesTomContentType" id="field_byteAnyMaxbytesTomContentType"
+                    ng-model="vm.fieldTestEntity.byteAnyMaxbytesTomContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesTom.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteTextTom" for="field_byteTextTom">Byte Text Tom</label>
+                <textarea class="form-control" name="byteTextTom" id="field_byteTextTom"
+                    ng-model="vm.fieldTestEntity.byteTextTom" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteTextRequiredTom" for="field_byteTextRequiredTom">Byte Text Required Tom</label>
+                <textarea class="form-control" name="byteTextRequiredTom" id="field_byteTextRequiredTom"
+                    ng-model="vm.fieldTestEntity.byteTextRequiredTom" required></textarea>
+            <div ng-show="editForm.byteTextRequiredTom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredTom.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteTextMinbytesTom" for="field_byteTextMinbytesTom">Byte Text Minbytes Tom</label>
+                <textarea class="form-control" name="byteTextMinbytesTom" id="field_byteTextMinbytesTom"
+                    ng-model="vm.fieldTestEntity.byteTextMinbytesTom" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesTom.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestEntity.byteTextMaxbytesTom" for="field_byteTextMaxbytesTom">Byte Text Maxbytes Tom</label>
+                <textarea class="form-control" name="byteTextMaxbytesTom" id="field_byteTextMaxbytesTom"
+                    ng-model="vm.fieldTestEntity.byteTextMaxbytesTom" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesTom.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesTom.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

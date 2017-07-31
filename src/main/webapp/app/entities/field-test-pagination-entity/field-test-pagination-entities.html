@@ -1,0 +1,176 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestPaginationEntity.home.title">Field Test Pagination Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-pagination-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestPaginationEntity.home.createLabel">
+                        Create new Field Test Pagination Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.stringAlice">String Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.stringRequiredAlice">String Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMinlengthAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.stringMinlengthAlice">String Minlength Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMaxlengthAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.stringMaxlengthAlice">String Maxlength Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringPatternAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.stringPatternAlice">String Pattern Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.integerAlice">Integer Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.integerRequiredAlice">Integer Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMinAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.integerMinAlice">Integer Min Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMaxAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.integerMaxAlice">Integer Max Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.longAlice">Long Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.longRequiredAlice">Long Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMinAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.longMinAlice">Long Min Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMaxAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.longMaxAlice">Long Max Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.floatAlice">Float Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.floatRequiredAlice">Float Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMinAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.floatMinAlice">Float Min Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMaxAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.floatMaxAlice">Float Max Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleRequiredAlice">Double Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMinAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleMinAlice">Double Min Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMaxAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.doubleMaxAlice">Double Max Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalRequiredAlice">Big Decimal Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMinAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalMinAlice">Big Decimal Min Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMaxAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.bigDecimalMaxAlice">Big Decimal Max Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.localDateAlice">Local Date Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.localDateRequiredAlice">Local Date Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.zonedDateTimeAlice">Zoned Date Time Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.zonedDateTimeRequiredAlice">Zoned Date Time Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.booleanAlice">Boolean Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.booleanRequiredAlice">Boolean Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.enumAlice">Enum Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.enumRequiredAlice">Enum Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageAlice">Byte Image Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageRequiredAlice">Byte Image Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMinbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageMinbytesAlice">Byte Image Minbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMaxbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteImageMaxbytesAlice">Byte Image Maxbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyAlice">Byte Any Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyRequiredAlice">Byte Any Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMinbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyMinbytesAlice">Byte Any Minbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMaxbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteAnyMaxbytesAlice">Byte Any Maxbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextAlice">Byte Text Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextRequiredAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextRequiredAlice">Byte Text Required Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMinbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextMinbytesAlice">Byte Text Minbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMaxbytesAlice"><span data-translate="travisMysqlApp.fieldTestPaginationEntity.byteTextMaxbytesAlice">Byte Text Maxbytes Alice</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestPaginationEntity in vm.fieldTestPaginationEntities track by fieldTestPaginationEntity.id">
+                    <td><a ui-sref="field-test-pagination-entity-detail({id:fieldTestPaginationEntity.id})">{{fieldTestPaginationEntity.id}}</a></td>
+                    <td>{{fieldTestPaginationEntity.stringAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.stringRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.stringMinlengthAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.stringMaxlengthAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.stringPatternAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.integerAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.integerRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.integerMinAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.integerMaxAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.longAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.longRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.longMinAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.longMaxAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.floatAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.floatRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.floatMinAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.floatMaxAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.doubleRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.doubleMinAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.doubleMaxAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.bigDecimalRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.bigDecimalMinAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.bigDecimalMaxAlice}}</td>
+                        <td>{{fieldTestPaginationEntity.localDateAlice | date:'mediumDate'}}</td>
+                        <td>{{fieldTestPaginationEntity.localDateRequiredAlice | date:'mediumDate'}}</td>
+                    <td>{{fieldTestPaginationEntity.zonedDateTimeAlice | date:'medium'}}</td>
+                    <td>{{fieldTestPaginationEntity.zonedDateTimeRequiredAlice | date:'medium'}}</td>
+                    <td>{{fieldTestPaginationEntity.booleanAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.booleanRequiredAlice}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestPaginationEntity.enumAlice}}">{{fieldTestPaginationEntity.enumAlice}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestPaginationEntity.enumRequiredAlice}}">{{fieldTestPaginationEntity.enumRequiredAlice}}</td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteImageAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteImageAliceContentType, fieldTestPaginationEntity.byteImageAlice)">
+                            <img data-ng-src="{{'data:' + fieldTestPaginationEntity.byteImageAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageAlice}}" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPaginationEntity.byteImageAlice">{{fieldTestPaginationEntity.byteImageAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteImageAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteImageRequiredAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteImageRequiredAliceContentType, fieldTestPaginationEntity.byteImageRequiredAlice)">
+                            <img data-ng-src="{{'data:' + fieldTestPaginationEntity.byteImageRequiredAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageRequiredAlice}}" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPaginationEntity.byteImageRequiredAlice">{{fieldTestPaginationEntity.byteImageRequiredAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteImageRequiredAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteImageMinbytesAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteImageMinbytesAliceContentType, fieldTestPaginationEntity.byteImageMinbytesAlice)">
+                            <img data-ng-src="{{'data:' + fieldTestPaginationEntity.byteImageMinbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMinbytesAlice}}" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPaginationEntity.byteImageMinbytesAlice">{{fieldTestPaginationEntity.byteImageMinbytesAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteImageMinbytesAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteImageMaxbytesAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteImageMaxbytesAliceContentType, fieldTestPaginationEntity.byteImageMaxbytesAlice)">
+                            <img data-ng-src="{{'data:' + fieldTestPaginationEntity.byteImageMaxbytesAliceContentType + ';base64,' + fieldTestPaginationEntity.byteImageMaxbytesAlice}}" style="max-height: 30px;" alt="fieldTestPaginationEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPaginationEntity.byteImageMaxbytesAlice">{{fieldTestPaginationEntity.byteImageMaxbytesAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteImageMaxbytesAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteAnyAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteAnyAliceContentType, fieldTestPaginationEntity.byteAnyAlice)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPaginationEntity.byteAnyAlice">{{fieldTestPaginationEntity.byteAnyAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteAnyAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteAnyRequiredAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteAnyRequiredAliceContentType, fieldTestPaginationEntity.byteAnyRequiredAlice)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPaginationEntity.byteAnyRequiredAlice">{{fieldTestPaginationEntity.byteAnyRequiredAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteAnyRequiredAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteAnyMinbytesAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteAnyMinbytesAliceContentType, fieldTestPaginationEntity.byteAnyMinbytesAlice)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPaginationEntity.byteAnyMinbytesAlice">{{fieldTestPaginationEntity.byteAnyMinbytesAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteAnyMinbytesAlice)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPaginationEntity.byteAnyMaxbytesAlice" ng-click="vm.openFile(fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType, fieldTestPaginationEntity.byteAnyMaxbytesAlice)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPaginationEntity.byteAnyMaxbytesAlice">{{fieldTestPaginationEntity.byteAnyMaxbytesAliceContentType}}, {{vm.byteSize(fieldTestPaginationEntity.byteAnyMaxbytesAlice)}}</span>
+                    </td>
+                    <td>{{fieldTestPaginationEntity.byteTextAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.byteTextRequiredAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.byteTextMinbytesAlice}}</td>
+                    <td>{{fieldTestPaginationEntity.byteTextMaxbytesAlice}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-pagination-entity-detail({id:fieldTestPaginationEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-pagination-entity.edit({id:fieldTestPaginationEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-pagination-entity.delete({id:fieldTestPaginationEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

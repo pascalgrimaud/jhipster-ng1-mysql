@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestMapstructEntity.home.title">Field Test Mapstruct Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-mapstruct-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestMapstructEntity.home.createLabel">
+                        Create new Field Test Mapstruct Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.stringEva">String Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.stringRequiredEva">String Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.stringMinlengthEva">String Minlength Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.stringMaxlengthEva">String Maxlength Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.stringPatternEva">String Pattern Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.integerEva">Integer Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.integerRequiredEva">Integer Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.integerMinEva">Integer Min Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.integerMaxEva">Integer Max Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.longEva">Long Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.longRequiredEva">Long Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.longMinEva">Long Min Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.longMaxEva">Long Max Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.floatEva">Float Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.floatRequiredEva">Float Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.floatMinEva">Float Min Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.floatMaxEva">Float Max Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleRequiredEva">Double Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleMinEva">Double Min Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.doubleMaxEva">Double Max Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalRequiredEva">Big Decimal Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalMinEva">Big Decimal Min Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.bigDecimalMaxEva">Big Decimal Max Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.localDateEva">Local Date Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.localDateRequiredEva">Local Date Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.zonedDateTimeEva">Zoned Date Time Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.zonedDateTimeRequiredEva">Zoned Date Time Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.booleanEva">Boolean Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.booleanRequiredEva">Boolean Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.enumEva">Enum Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.enumRequiredEva">Enum Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageEva">Byte Image Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageRequiredEva">Byte Image Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageMinbytesEva">Byte Image Minbytes Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteImageMaxbytesEva">Byte Image Maxbytes Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyEva">Byte Any Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyRequiredEva">Byte Any Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyMinbytesEva">Byte Any Minbytes Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteAnyMaxbytesEva">Byte Any Maxbytes Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextEva">Byte Text Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextRequiredEva">Byte Text Required Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextMinbytesEva">Byte Text Minbytes Eva</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestMapstructEntity.byteTextMaxbytesEva">Byte Text Maxbytes Eva</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestMapstructEntity in vm.fieldTestMapstructEntities track by fieldTestMapstructEntity.id">
+                    <td><a ui-sref="field-test-mapstruct-entity-detail({id:fieldTestMapstructEntity.id})">{{fieldTestMapstructEntity.id}}</a></td>
+                    <td>{{fieldTestMapstructEntity.stringEva}}</td>
+                    <td>{{fieldTestMapstructEntity.stringRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.stringMinlengthEva}}</td>
+                    <td>{{fieldTestMapstructEntity.stringMaxlengthEva}}</td>
+                    <td>{{fieldTestMapstructEntity.stringPatternEva}}</td>
+                    <td>{{fieldTestMapstructEntity.integerEva}}</td>
+                    <td>{{fieldTestMapstructEntity.integerRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.integerMinEva}}</td>
+                    <td>{{fieldTestMapstructEntity.integerMaxEva}}</td>
+                    <td>{{fieldTestMapstructEntity.longEva}}</td>
+                    <td>{{fieldTestMapstructEntity.longRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.longMinEva}}</td>
+                    <td>{{fieldTestMapstructEntity.longMaxEva}}</td>
+                    <td>{{fieldTestMapstructEntity.floatEva}}</td>
+                    <td>{{fieldTestMapstructEntity.floatRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.floatMinEva}}</td>
+                    <td>{{fieldTestMapstructEntity.floatMaxEva}}</td>
+                    <td>{{fieldTestMapstructEntity.doubleRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.doubleMinEva}}</td>
+                    <td>{{fieldTestMapstructEntity.doubleMaxEva}}</td>
+                    <td>{{fieldTestMapstructEntity.bigDecimalRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.bigDecimalMinEva}}</td>
+                    <td>{{fieldTestMapstructEntity.bigDecimalMaxEva}}</td>
+                        <td>{{fieldTestMapstructEntity.localDateEva | date:'mediumDate'}}</td>
+                        <td>{{fieldTestMapstructEntity.localDateRequiredEva | date:'mediumDate'}}</td>
+                    <td>{{fieldTestMapstructEntity.zonedDateTimeEva | date:'medium'}}</td>
+                    <td>{{fieldTestMapstructEntity.zonedDateTimeRequiredEva | date:'medium'}}</td>
+                    <td>{{fieldTestMapstructEntity.booleanEva}}</td>
+                    <td>{{fieldTestMapstructEntity.booleanRequiredEva}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestMapstructEntity.enumEva}}">{{fieldTestMapstructEntity.enumEva}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestMapstructEntity.enumRequiredEva}}">{{fieldTestMapstructEntity.enumRequiredEva}}</td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteImageEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteImageEvaContentType, fieldTestMapstructEntity.byteImageEva)">
+                            <img data-ng-src="{{'data:' + fieldTestMapstructEntity.byteImageEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageEva}}" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestMapstructEntity.byteImageEva">{{fieldTestMapstructEntity.byteImageEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteImageEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteImageRequiredEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteImageRequiredEvaContentType, fieldTestMapstructEntity.byteImageRequiredEva)">
+                            <img data-ng-src="{{'data:' + fieldTestMapstructEntity.byteImageRequiredEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageRequiredEva}}" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestMapstructEntity.byteImageRequiredEva">{{fieldTestMapstructEntity.byteImageRequiredEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteImageRequiredEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteImageMinbytesEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteImageMinbytesEvaContentType, fieldTestMapstructEntity.byteImageMinbytesEva)">
+                            <img data-ng-src="{{'data:' + fieldTestMapstructEntity.byteImageMinbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMinbytesEva}}" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestMapstructEntity.byteImageMinbytesEva">{{fieldTestMapstructEntity.byteImageMinbytesEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteImageMinbytesEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteImageMaxbytesEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteImageMaxbytesEvaContentType, fieldTestMapstructEntity.byteImageMaxbytesEva)">
+                            <img data-ng-src="{{'data:' + fieldTestMapstructEntity.byteImageMaxbytesEvaContentType + ';base64,' + fieldTestMapstructEntity.byteImageMaxbytesEva}}" style="max-height: 30px;" alt="fieldTestMapstructEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestMapstructEntity.byteImageMaxbytesEva">{{fieldTestMapstructEntity.byteImageMaxbytesEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteImageMaxbytesEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteAnyEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteAnyEvaContentType, fieldTestMapstructEntity.byteAnyEva)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestMapstructEntity.byteAnyEva">{{fieldTestMapstructEntity.byteAnyEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteAnyEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteAnyRequiredEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteAnyRequiredEvaContentType, fieldTestMapstructEntity.byteAnyRequiredEva)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestMapstructEntity.byteAnyRequiredEva">{{fieldTestMapstructEntity.byteAnyRequiredEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteAnyRequiredEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteAnyMinbytesEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteAnyMinbytesEvaContentType, fieldTestMapstructEntity.byteAnyMinbytesEva)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestMapstructEntity.byteAnyMinbytesEva">{{fieldTestMapstructEntity.byteAnyMinbytesEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteAnyMinbytesEva)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestMapstructEntity.byteAnyMaxbytesEva" ng-click="vm.openFile(fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType, fieldTestMapstructEntity.byteAnyMaxbytesEva)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestMapstructEntity.byteAnyMaxbytesEva">{{fieldTestMapstructEntity.byteAnyMaxbytesEvaContentType}}, {{vm.byteSize(fieldTestMapstructEntity.byteAnyMaxbytesEva)}}</span>
+                    </td>
+                    <td>{{fieldTestMapstructEntity.byteTextEva}}</td>
+                    <td>{{fieldTestMapstructEntity.byteTextRequiredEva}}</td>
+                    <td>{{fieldTestMapstructEntity.byteTextMinbytesEva}}</td>
+                    <td>{{fieldTestMapstructEntity.byteTextMaxbytesEva}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-mapstruct-entity-detail({id:fieldTestMapstructEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-mapstruct-entity.edit({id:fieldTestMapstructEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-mapstruct-entity.delete({id:fieldTestMapstructEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

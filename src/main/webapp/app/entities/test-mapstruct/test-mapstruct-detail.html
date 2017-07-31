@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span data-translate="travisMysqlApp.testMapstruct.detail.title">Test Mapstruct</span> {{vm.testMapstruct.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="travisMysqlApp.testMapstruct.userOneToMany">User One To Many</span></dt>
+        <dd>
+            {{vm.testMapstruct.userOneToManyLogin}}
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testMapstruct.userManyToMany">User Many To Many</span></dt>
+        <dd>
+            <span ng-repeat="userManyToMany in vm.testMapstruct.userManyToManies">
+                {{userManyToMany.login}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testMapstruct.userOneToOne">User One To One</span></dt>
+        <dd>
+            {{vm.testMapstruct.userOneToOneLogin}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="test-mapstruct-detail.edit({id:vm.testMapstruct.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

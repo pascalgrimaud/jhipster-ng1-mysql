@@ -1,0 +1,27 @@
+{
+    "travisMysqlApp": {
+        "testCustomTableName" : {
+            "home": {
+                "title": "Test Custom Table Names",
+                "createLabel": "Create a new Test Custom Table Name",
+                "createOrEditLabel": "Create or edit a Test Custom Table Name"
+            },
+            "created": "A new Test Custom Table Name is created with identifier {{ param }}",
+            "updated": "A Test Custom Table Name is updated with identifier {{ param }}",
+            "deleted": "A Test Custom Table Name is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Test Custom Table Name {{ id }}?"
+            },
+            "detail": {
+                "title": "Test Custom Table Name"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "testEntity": "Test Entity",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

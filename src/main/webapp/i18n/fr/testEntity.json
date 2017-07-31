@@ -1,0 +1,27 @@
+{
+    "travisMysqlApp": {
+        "testEntity" : {
+            "home": {
+                "title": "TestEntities",
+                "createLabel": "Créer un nouveau Test Entity",
+                "createOrEditLabel": "Créer ou éditer un Test Entity"
+            },
+            "created": "Un nouveau Test Entity a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Entity avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Entity avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Entity {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Entity"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One",
+            "testCustomTableName": "Test Custom Table Name"
+        }
+    }
+}

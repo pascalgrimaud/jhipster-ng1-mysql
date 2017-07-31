@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestServiceClassEntity.home.title">Field Test Service Class Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-service-class-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestServiceClassEntity.home.createLabel">
+                        Create new Field Test Service Class Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.stringBob">String Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.stringRequiredBob">String Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.stringMinlengthBob">String Minlength Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.stringMaxlengthBob">String Maxlength Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.stringPatternBob">String Pattern Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.integerBob">Integer Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.integerRequiredBob">Integer Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.integerMinBob">Integer Min Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.integerMaxBob">Integer Max Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.longBob">Long Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.longRequiredBob">Long Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.longMinBob">Long Min Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.longMaxBob">Long Max Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.floatBob">Float Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.floatRequiredBob">Float Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.floatMinBob">Float Min Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.floatMaxBob">Float Max Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.doubleRequiredBob">Double Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.doubleMinBob">Double Min Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.doubleMaxBob">Double Max Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.bigDecimalRequiredBob">Big Decimal Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.bigDecimalMinBob">Big Decimal Min Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.bigDecimalMaxBob">Big Decimal Max Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.localDateBob">Local Date Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.localDateRequiredBob">Local Date Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.zonedDateTimeBob">Zoned Date Time Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.zonedDateTimeRequiredBob">Zoned Date Time Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.booleanBob">Boolean Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.booleanRequiredBob">Boolean Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.enumBob">Enum Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.enumRequiredBob">Enum Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteImageBob">Byte Image Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteImageRequiredBob">Byte Image Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteImageMinbytesBob">Byte Image Minbytes Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteImageMaxbytesBob">Byte Image Maxbytes Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteAnyBob">Byte Any Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteAnyRequiredBob">Byte Any Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteAnyMinbytesBob">Byte Any Minbytes Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteAnyMaxbytesBob">Byte Any Maxbytes Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteTextBob">Byte Text Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteTextRequiredBob">Byte Text Required Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteTextMinbytesBob">Byte Text Minbytes Bob</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestServiceClassEntity.byteTextMaxbytesBob">Byte Text Maxbytes Bob</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestServiceClassEntity in vm.fieldTestServiceClassEntities track by fieldTestServiceClassEntity.id">
+                    <td><a ui-sref="field-test-service-class-entity-detail({id:fieldTestServiceClassEntity.id})">{{fieldTestServiceClassEntity.id}}</a></td>
+                    <td>{{fieldTestServiceClassEntity.stringBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.stringRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.stringMinlengthBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.stringMaxlengthBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.stringPatternBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.integerBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.integerRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.integerMinBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.integerMaxBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.longBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.longRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.longMinBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.longMaxBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.floatBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.floatRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.floatMinBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.floatMaxBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.doubleRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.doubleMinBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.doubleMaxBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.bigDecimalRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.bigDecimalMinBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.bigDecimalMaxBob}}</td>
+                        <td>{{fieldTestServiceClassEntity.localDateBob | date:'mediumDate'}}</td>
+                        <td>{{fieldTestServiceClassEntity.localDateRequiredBob | date:'mediumDate'}}</td>
+                    <td>{{fieldTestServiceClassEntity.zonedDateTimeBob | date:'medium'}}</td>
+                    <td>{{fieldTestServiceClassEntity.zonedDateTimeRequiredBob | date:'medium'}}</td>
+                    <td>{{fieldTestServiceClassEntity.booleanBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.booleanRequiredBob}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestServiceClassEntity.enumBob}}">{{fieldTestServiceClassEntity.enumBob}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestServiceClassEntity.enumRequiredBob}}">{{fieldTestServiceClassEntity.enumRequiredBob}}</td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteImageBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteImageBobContentType, fieldTestServiceClassEntity.byteImageBob)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceClassEntity.byteImageBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageBob}}" style="max-height: 30px;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceClassEntity.byteImageBob">{{fieldTestServiceClassEntity.byteImageBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteImageBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteImageRequiredBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteImageRequiredBobContentType, fieldTestServiceClassEntity.byteImageRequiredBob)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceClassEntity.byteImageRequiredBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageRequiredBob}}" style="max-height: 30px;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceClassEntity.byteImageRequiredBob">{{fieldTestServiceClassEntity.byteImageRequiredBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteImageRequiredBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteImageMinbytesBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteImageMinbytesBobContentType, fieldTestServiceClassEntity.byteImageMinbytesBob)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceClassEntity.byteImageMinbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMinbytesBob}}" style="max-height: 30px;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceClassEntity.byteImageMinbytesBob">{{fieldTestServiceClassEntity.byteImageMinbytesBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteImageMinbytesBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteImageMaxbytesBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteImageMaxbytesBobContentType, fieldTestServiceClassEntity.byteImageMaxbytesBob)">
+                            <img data-ng-src="{{'data:' + fieldTestServiceClassEntity.byteImageMaxbytesBobContentType + ';base64,' + fieldTestServiceClassEntity.byteImageMaxbytesBob}}" style="max-height: 30px;" alt="fieldTestServiceClassEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestServiceClassEntity.byteImageMaxbytesBob">{{fieldTestServiceClassEntity.byteImageMaxbytesBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteImageMaxbytesBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteAnyBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteAnyBobContentType, fieldTestServiceClassEntity.byteAnyBob)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceClassEntity.byteAnyBob">{{fieldTestServiceClassEntity.byteAnyBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteAnyBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteAnyRequiredBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteAnyRequiredBobContentType, fieldTestServiceClassEntity.byteAnyRequiredBob)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceClassEntity.byteAnyRequiredBob">{{fieldTestServiceClassEntity.byteAnyRequiredBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteAnyRequiredBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteAnyMinbytesBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteAnyMinbytesBobContentType, fieldTestServiceClassEntity.byteAnyMinbytesBob)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceClassEntity.byteAnyMinbytesBob">{{fieldTestServiceClassEntity.byteAnyMinbytesBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteAnyMinbytesBob)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestServiceClassEntity.byteAnyMaxbytesBob" ng-click="vm.openFile(fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType, fieldTestServiceClassEntity.byteAnyMaxbytesBob)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestServiceClassEntity.byteAnyMaxbytesBob">{{fieldTestServiceClassEntity.byteAnyMaxbytesBobContentType}}, {{vm.byteSize(fieldTestServiceClassEntity.byteAnyMaxbytesBob)}}</span>
+                    </td>
+                    <td>{{fieldTestServiceClassEntity.byteTextBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.byteTextRequiredBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.byteTextMinbytesBob}}</td>
+                    <td>{{fieldTestServiceClassEntity.byteTextMaxbytesBob}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-service-class-entity-detail({id:fieldTestServiceClassEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-service-class-entity.edit({id:fieldTestServiceClassEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-service-class-entity.delete({id:fieldTestServiceClassEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+    "travisMysqlApp": {
+        "testServiceClass" : {
+            "home": {
+                "title": "TestServiceClasses",
+                "createLabel": "Créer un nouveau Test Service Class",
+                "createOrEditLabel": "Créer ou éditer un Test Service Class"
+            },
+            "created": "Un nouveau Test Service Class a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Service Class avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Service Class avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Service Class {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Service Class"
+            },
+            "testManyToOne": "Test Many To One",
+            "testManyToMany": "Test Many To Many",
+            "testOneToOne": "Test One To One",
+            "userOneToMany": "User One To Many",
+            "userManyToMany": "User Many To Many",
+            "userOneToOne": "User One To One"
+        }
+    }
+}

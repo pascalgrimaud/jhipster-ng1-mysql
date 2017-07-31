@@ -1,0 +1,682 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myFieldTestServiceImplEntityLabel" data-translate="travisMysqlApp.fieldTestServiceImplEntity.home.createOrEditLabel">Create or edit a Field Test Service Impl Entity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.fieldTestServiceImplEntity.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.fieldTestServiceImplEntity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMika" for="field_stringMika">String Mika</label>
+            <input type="text" class="form-control" name="stringMika" id="field_stringMika"
+                    ng-model="vm.fieldTestServiceImplEntity.stringMika"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringRequiredMika" for="field_stringRequiredMika">String Required Mika</label>
+            <input type="text" class="form-control" name="stringRequiredMika" id="field_stringRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.stringRequiredMika"
+                    required/>
+            <div ng-show="editForm.stringRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMinlengthMika" for="field_stringMinlengthMika">String Minlength Mika</label>
+            <input type="text" class="form-control" name="stringMinlengthMika" id="field_stringMinlengthMika"
+                    ng-model="vm.fieldTestServiceImplEntity.stringMinlengthMika"
+                    ng-minlength="0"/>
+            <div ng-show="editForm.stringMinlengthMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMinlengthMika.$error.minlength" data-translate="entity.validation.minlength" translate-value-min="0">
+                    This field is required to be at least 0 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringMaxlengthMika" for="field_stringMaxlengthMika">String Maxlength Mika</label>
+            <input type="text" class="form-control" name="stringMaxlengthMika" id="field_stringMaxlengthMika"
+                    ng-model="vm.fieldTestServiceImplEntity.stringMaxlengthMika"
+                    ng-maxlength="20"/>
+            <div ng-show="editForm.stringMaxlengthMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringMaxlengthMika.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.stringPatternMika" for="field_stringPatternMika">String Pattern Mika</label>
+            <input type="text" class="form-control" name="stringPatternMika" id="field_stringPatternMika"
+                    ng-model="vm.fieldTestServiceImplEntity.stringPatternMika"
+                    ng-pattern="/^[a-zA-Z0-9]*$/"/>
+            <div ng-show="editForm.stringPatternMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.stringPatternMika.$error.pattern" data-translate="entity.validation.pattern" translate-value-pattern="String Pattern Mika">
+                    This field should follow pattern for "String Pattern Mika".
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMika" for="field_integerMika">Integer Mika</label>
+            <input type="number" class="form-control" name="integerMika" id="field_integerMika"
+                    ng-model="vm.fieldTestServiceImplEntity.integerMika"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerRequiredMika" for="field_integerRequiredMika">Integer Required Mika</label>
+            <input type="number" class="form-control" name="integerRequiredMika" id="field_integerRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.integerRequiredMika"
+                    required/>
+            <div ng-show="editForm.integerRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerRequiredMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMinMika" for="field_integerMinMika">Integer Min Mika</label>
+            <input type="number" class="form-control" name="integerMinMika" id="field_integerMinMika"
+                    ng-model="vm.fieldTestServiceImplEntity.integerMinMika"
+                    min="0"/>
+            <div ng-show="editForm.integerMinMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMinMika.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMinMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.integerMaxMika" for="field_integerMaxMika">Integer Max Mika</label>
+            <input type="number" class="form-control" name="integerMaxMika" id="field_integerMaxMika"
+                    ng-model="vm.fieldTestServiceImplEntity.integerMaxMika"
+                    max="100"/>
+            <div ng-show="editForm.integerMaxMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.integerMaxMika.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.integerMaxMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMika" for="field_longMika">Long Mika</label>
+            <input type="number" class="form-control" name="longMika" id="field_longMika"
+                    ng-model="vm.fieldTestServiceImplEntity.longMika"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.longRequiredMika" for="field_longRequiredMika">Long Required Mika</label>
+            <input type="number" class="form-control" name="longRequiredMika" id="field_longRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.longRequiredMika"
+                    required/>
+            <div ng-show="editForm.longRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longRequiredMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMinMika" for="field_longMinMika">Long Min Mika</label>
+            <input type="number" class="form-control" name="longMinMika" id="field_longMinMika"
+                    ng-model="vm.fieldTestServiceImplEntity.longMinMika"
+                    min="0"/>
+            <div ng-show="editForm.longMinMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMinMika.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMinMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.longMaxMika" for="field_longMaxMika">Long Max Mika</label>
+            <input type="number" class="form-control" name="longMaxMika" id="field_longMaxMika"
+                    ng-model="vm.fieldTestServiceImplEntity.longMaxMika"
+                    max="100"/>
+            <div ng-show="editForm.longMaxMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.longMaxMika.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.longMaxMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMika" for="field_floatMika">Float Mika</label>
+            <input type="number" class="form-control" name="floatMika" id="field_floatMika"
+                    ng-model="vm.fieldTestServiceImplEntity.floatMika"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatRequiredMika" for="field_floatRequiredMika">Float Required Mika</label>
+            <input type="number" class="form-control" name="floatRequiredMika" id="field_floatRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.floatRequiredMika"
+                    required/>
+            <div ng-show="editForm.floatRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatRequiredMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMinMika" for="field_floatMinMika">Float Min Mika</label>
+            <input type="number" class="form-control" name="floatMinMika" id="field_floatMinMika"
+                    ng-model="vm.fieldTestServiceImplEntity.floatMinMika"
+                    min="0"/>
+            <div ng-show="editForm.floatMinMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMinMika.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMinMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.floatMaxMika" for="field_floatMaxMika">Float Max Mika</label>
+            <input type="number" class="form-control" name="floatMaxMika" id="field_floatMaxMika"
+                    ng-model="vm.fieldTestServiceImplEntity.floatMaxMika"
+                    max="100"/>
+            <div ng-show="editForm.floatMaxMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.floatMaxMika.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.floatMaxMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleRequiredMika" for="field_doubleRequiredMika">Double Required Mika</label>
+            <input type="number" class="form-control" name="doubleRequiredMika" id="field_doubleRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.doubleRequiredMika"
+                    required/>
+            <div ng-show="editForm.doubleRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleRequiredMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleMinMika" for="field_doubleMinMika">Double Min Mika</label>
+            <input type="number" class="form-control" name="doubleMinMika" id="field_doubleMinMika"
+                    ng-model="vm.fieldTestServiceImplEntity.doubleMinMika"
+                    min="0"/>
+            <div ng-show="editForm.doubleMinMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMinMika.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMinMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.doubleMaxMika" for="field_doubleMaxMika">Double Max Mika</label>
+            <input type="number" class="form-control" name="doubleMaxMika" id="field_doubleMaxMika"
+                    ng-model="vm.fieldTestServiceImplEntity.doubleMaxMika"
+                    max="100"/>
+            <div ng-show="editForm.doubleMaxMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxMika.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.doubleMaxMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalRequiredMika" for="field_bigDecimalRequiredMika">Big Decimal Required Mika</label>
+            <input type="number" class="form-control" name="bigDecimalRequiredMika" id="field_bigDecimalRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.bigDecimalRequiredMika"
+                    required/>
+            <div ng-show="editForm.bigDecimalRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalRequiredMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalMinMika" for="field_bigDecimalMinMika">Big Decimal Min Mika</label>
+            <input type="number" class="form-control" name="bigDecimalMinMika" id="field_bigDecimalMinMika"
+                    ng-model="vm.fieldTestServiceImplEntity.bigDecimalMinMika"
+                    min="0"/>
+            <div ng-show="editForm.bigDecimalMinMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinMika.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMinMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.bigDecimalMaxMika" for="field_bigDecimalMaxMika">Big Decimal Max Mika</label>
+            <input type="number" class="form-control" name="bigDecimalMaxMika" id="field_bigDecimalMaxMika"
+                    ng-model="vm.fieldTestServiceImplEntity.bigDecimalMaxMika"
+                    max="100"/>
+            <div ng-show="editForm.bigDecimalMaxMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxMika.$error.max" data-translate="entity.validation.max" translate-value-max="100">
+                    This field cannot be more than 100.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bigDecimalMaxMika.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.localDateMika" for="field_localDateMika">Local Date Mika</label>
+                <div class="input-group">
+                    <input id="field_localDateMika" type="text" class="form-control" name="localDateMika" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestServiceImplEntity.localDateMika" is-open="vm.datePickerOpenStatus.localDateMika"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateMika')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.localDateRequiredMika" for="field_localDateRequiredMika">Local Date Required Mika</label>
+                <div class="input-group">
+                    <input id="field_localDateRequiredMika" type="text" class="form-control" name="localDateRequiredMika" uib-datepicker-popup="{{dateformat}}" ng-model="vm.fieldTestServiceImplEntity.localDateRequiredMika" is-open="vm.datePickerOpenStatus.localDateRequiredMika"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('localDateRequiredMika')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.localDateRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.localDateRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.zonedDateTimeMika" for="field_zonedDateTimeMika">Zoned Date Time Mika</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeMika" type="text" class="form-control" name="zonedDateTimeMika" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestServiceImplEntity.zonedDateTimeMika" is-open="vm.datePickerOpenStatus.zonedDateTimeMika"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeMika')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.zonedDateTimeRequiredMika" for="field_zonedDateTimeRequiredMika">Zoned Date Time Required Mika</label>
+                <div class="input-group">
+                    <input id="field_zonedDateTimeRequiredMika" type="text" class="form-control" name="zonedDateTimeRequiredMika" datetime-picker="{{dateformat}}" ng-model="vm.fieldTestServiceImplEntity.zonedDateTimeRequiredMika" is-open="vm.datePickerOpenStatus.zonedDateTimeRequiredMika"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('zonedDateTimeRequiredMika')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.zonedDateTimeRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.zonedDateTimeRequiredMika.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.booleanMika" for="field_booleanMika">Boolean Mika</label>
+                <input type="checkbox" name="booleanMika" id="field_booleanMika"
+                          ng-model="vm.fieldTestServiceImplEntity.booleanMika"/>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.booleanRequiredMika" for="field_booleanRequiredMika">Boolean Required Mika</label>
+                <input type="checkbox" name="booleanRequiredMika" id="field_booleanRequiredMika"
+                          ng-model="vm.fieldTestServiceImplEntity.booleanRequiredMika"/>
+            <div ng-show="editForm.booleanRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.booleanRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.enumMika" for="field_enumMika">Enum Mika</label>
+            <select class="form-control" name="enumMika" ng-model="vm.fieldTestServiceImplEntity.enumMika" id="field_enumMika">
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.enumRequiredMika" for="field_enumRequiredMika">Enum Required Mika</label>
+            <select class="form-control" name="enumRequiredMika" ng-model="vm.fieldTestServiceImplEntity.enumRequiredMika" id="field_enumRequiredMika" required>
+                <option value="ENUM_VALUE_1" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_1">ENUM_VALUE_1</option>
+                <option value="ENUM_VALUE_2" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_2">ENUM_VALUE_2</option>
+                <option value="ENUM_VALUE_3" data-translate="travisMysqlApp.EnumRequiredFieldClass.ENUM_VALUE_3">ENUM_VALUE_3</option>
+            </select>
+            <div ng-show="editForm.enumRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enumRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMika($file, vm.fieldTestServiceImplEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMika" for="field_byteImageMika">Byte Image Mika</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestServiceImplEntity.byteImageMikaContentType + ';base64,' + vm.fieldTestServiceImplEntity.byteImageMika}}" style="max-height: 100px;" ng-if="vm.fieldTestServiceImplEntity.byteImageMika" alt="fieldTestServiceImplEntity image"/>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteImageMika" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteImageMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteImageMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteImageMika=null;vm.fieldTestServiceImplEntity.byteImageMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMika($file, vm.fieldTestServiceImplEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMika" id="field_byteImageMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMika"
+                    />
+            <input type="hidden" class="form-control" name="byteImageMikaContentType" id="field_byteImageMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMikaContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageRequiredMika($file, vm.fieldTestServiceImplEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageRequiredMika" for="field_byteImageRequiredMika">Byte Image Required Mika</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestServiceImplEntity.byteImageRequiredMikaContentType + ';base64,' + vm.fieldTestServiceImplEntity.byteImageRequiredMika}}" style="max-height: 100px;" ng-if="vm.fieldTestServiceImplEntity.byteImageRequiredMika" alt="fieldTestServiceImplEntity image"/>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteImageRequiredMika" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteImageRequiredMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteImageRequiredMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteImageRequiredMika=null;vm.fieldTestServiceImplEntity.byteImageRequiredMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageRequiredMika($file, vm.fieldTestServiceImplEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageRequiredMika" id="field_byteImageRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageRequiredMika"
+                    required/>
+            <input type="hidden" class="form-control" name="byteImageRequiredMikaContentType" id="field_byteImageRequiredMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageRequiredMikaContentType" />
+            <div ng-show="editForm.byteImageRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteImageRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMinbytesMika($file, vm.fieldTestServiceImplEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMinbytesMika" for="field_byteImageMinbytesMika">Byte Image Minbytes Mika</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestServiceImplEntity.byteImageMinbytesMikaContentType + ';base64,' + vm.fieldTestServiceImplEntity.byteImageMinbytesMika}}" style="max-height: 100px;" ng-if="vm.fieldTestServiceImplEntity.byteImageMinbytesMika" alt="fieldTestServiceImplEntity image"/>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteImageMinbytesMika" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteImageMinbytesMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteImageMinbytesMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteImageMinbytesMika=null;vm.fieldTestServiceImplEntity.byteImageMinbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMinbytesMika($file, vm.fieldTestServiceImplEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMinbytesMika" id="field_byteImageMinbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMinbytesMika"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteImageMinbytesMikaContentType" id="field_byteImageMinbytesMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMinbytesMikaContentType" />
+            <div ng-show="editForm.byteImageMinbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMinbytesMika.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteImageMaxbytesMika($file, vm.fieldTestServiceImplEntity)" ngf-pattern="'image/*'">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteImageMaxbytesMika" for="field_byteImageMaxbytesMika">Byte Image Maxbytes Mika</label>
+            <div>
+                <img data-ng-src="{{'data:' + vm.fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType + ';base64,' + vm.fieldTestServiceImplEntity.byteImageMaxbytesMika}}" style="max-height: 100px;" ng-if="vm.fieldTestServiceImplEntity.byteImageMaxbytesMika" alt="fieldTestServiceImplEntity image"/>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteImageMaxbytesMika" class="help-block clearfix">
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteImageMaxbytesMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteImageMaxbytesMika=null;vm.fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteImageMaxbytesMika($file, vm.fieldTestServiceImplEntity)" accept="image/*" data-translate="entity.action.addimage">
+                    Add image
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesMika" id="field_byteImageMaxbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMaxbytesMika"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteImageMaxbytesMikaContentType" id="field_byteImageMaxbytesMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteImageMaxbytesMikaContentType" />
+            <div ng-show="editForm.byteImageMaxbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteImageMaxbytesMika.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMika($file, vm.fieldTestServiceImplEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMika" for="field_byteAnyMika">Byte Any Mika</label>
+            <div>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteAnyMika" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestServiceImplEntity.byteAnyMikaContentType, vm.fieldTestServiceImplEntity.byteAnyMika)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteAnyMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteAnyMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteAnyMika=null;vm.fieldTestServiceImplEntity.byteAnyMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMika($file, vm.fieldTestServiceImplEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMika" id="field_byteAnyMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMika"
+                    />
+            <input type="hidden" class="form-control" name="byteAnyMikaContentType" id="field_byteAnyMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMikaContentType" />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyRequiredMika($file, vm.fieldTestServiceImplEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyRequiredMika" for="field_byteAnyRequiredMika">Byte Any Required Mika</label>
+            <div>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteAnyRequiredMika" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestServiceImplEntity.byteAnyRequiredMikaContentType, vm.fieldTestServiceImplEntity.byteAnyRequiredMika)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteAnyRequiredMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteAnyRequiredMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteAnyRequiredMika=null;vm.fieldTestServiceImplEntity.byteAnyRequiredMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyRequiredMika($file, vm.fieldTestServiceImplEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyRequiredMika" id="field_byteAnyRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyRequiredMika"
+                    required/>
+            <input type="hidden" class="form-control" name="byteAnyRequiredMikaContentType" id="field_byteAnyRequiredMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyRequiredMikaContentType" />
+            <div ng-show="editForm.byteAnyRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteAnyRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMinbytesMika($file, vm.fieldTestServiceImplEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMinbytesMika" for="field_byteAnyMinbytesMika">Byte Any Minbytes Mika</label>
+            <div>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteAnyMinbytesMika" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType, vm.fieldTestServiceImplEntity.byteAnyMinbytesMika)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteAnyMinbytesMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteAnyMinbytesMika=null;vm.fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMinbytesMika($file, vm.fieldTestServiceImplEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesMika" id="field_byteAnyMinbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMinbytesMika"
+                    minbytes="0"/>
+            <input type="hidden" class="form-control" name="byteAnyMinbytesMikaContentType" id="field_byteAnyMinbytesMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMinbytesMikaContentType" />
+            <div ng-show="editForm.byteAnyMinbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMinbytesMika.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group" ngf-drop ngf-change="vm.setByteAnyMaxbytesMika($file, vm.fieldTestServiceImplEntity)">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteAnyMaxbytesMika" for="field_byteAnyMaxbytesMika">Byte Any Maxbytes Mika</label>
+            <div>
+                <div ng-if="vm.fieldTestServiceImplEntity.byteAnyMaxbytesMika" class="help-block clearfix">
+                    <a class="pull-left" ng-click="vm.openFile(vm.fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType, vm.fieldTestServiceImplEntity.byteAnyMaxbytesMika)" data-translate="entity.action.open">open</a><br>
+                    <span class="pull-left">{{vm.fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType}}, {{vm.byteSize(vm.fieldTestServiceImplEntity.byteAnyMaxbytesMika)}}</span>
+                    <button type="button" ng-click="vm.fieldTestServiceImplEntity.byteAnyMaxbytesMika=null;vm.fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType=null;"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="button" ngf-select class="btn btn-default btn-block"
+                        ngf-change="vm.setByteAnyMaxbytesMika($file, vm.fieldTestServiceImplEntity)" data-translate="entity.action.addblob">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesMika" id="field_byteAnyMaxbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMaxbytesMika"
+                    maxbytes="10000"/>
+            <input type="hidden" class="form-control" name="byteAnyMaxbytesMikaContentType" id="field_byteAnyMaxbytesMikaContentType"
+                    ng-model="vm.fieldTestServiceImplEntity.byteAnyMaxbytesMikaContentType" />
+            <div ng-show="editForm.byteAnyMaxbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteAnyMaxbytesMika.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMika" for="field_byteTextMika">Byte Text Mika</label>
+                <textarea class="form-control" name="byteTextMika" id="field_byteTextMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteTextMika" ></textarea>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextRequiredMika" for="field_byteTextRequiredMika">Byte Text Required Mika</label>
+                <textarea class="form-control" name="byteTextRequiredMika" id="field_byteTextRequiredMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteTextRequiredMika" required></textarea>
+            <div ng-show="editForm.byteTextRequiredMika.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.byteTextRequiredMika.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMinbytesMika" for="field_byteTextMinbytesMika">Byte Text Minbytes Mika</label>
+                <textarea class="form-control" name="byteTextMinbytesMika" id="field_byteTextMinbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteTextMinbytesMika" minbytes="0"></textarea>
+            <div ng-show="editForm.byteTextMinbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMinbytesMika.$error.minbytes" data-translate="entity.validation.minbytes" translate-value-min="0">
+                    This field should be at least 0.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="travisMysqlApp.fieldTestServiceImplEntity.byteTextMaxbytesMika" for="field_byteTextMaxbytesMika">Byte Text Maxbytes Mika</label>
+                <textarea class="form-control" name="byteTextMaxbytesMika" id="field_byteTextMaxbytesMika"
+                    ng-model="vm.fieldTestServiceImplEntity.byteTextMaxbytesMika" maxbytes="10000"></textarea>
+            <div ng-show="editForm.byteTextMaxbytesMika.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.byteTextMaxbytesMika.$error.maxbytes" data-translate="entity.validation.maxbytes" translate-value-max="10000">
+                    This field cannot be more than 10000.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

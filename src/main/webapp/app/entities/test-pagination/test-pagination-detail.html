@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span data-translate="travisMysqlApp.testPagination.detail.title">Test Pagination</span> {{vm.testPagination.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="travisMysqlApp.testPagination.userOneToMany">User One To Many</span></dt>
+        <dd>
+            {{vm.testPagination.userOneToMany.login}}
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testPagination.userManyToMany">User Many To Many</span></dt>
+        <dd>
+            <span ng-repeat="userManyToMany in vm.testPagination.userManyToManies">
+                {{userManyToMany.login}}{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testPagination.userOneToOne">User One To One</span></dt>
+        <dd>
+            {{vm.testPagination.userOneToOne.login}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="test-pagination-detail.edit({id:vm.testPagination.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

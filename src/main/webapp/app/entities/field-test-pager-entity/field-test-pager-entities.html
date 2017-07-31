@@ -1,0 +1,176 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestPagerEntity.home.title">Field Test Pager Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-pager-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestPagerEntity.home.createLabel">
+                        Create new Field Test Pager Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.stringJade">String Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.stringRequiredJade">String Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMinlengthJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.stringMinlengthJade">String Minlength Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringMaxlengthJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.stringMaxlengthJade">String Maxlength Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="stringPatternJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.stringPatternJade">String Pattern Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.integerJade">Integer Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.integerRequiredJade">Integer Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMinJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.integerMinJade">Integer Min Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="integerMaxJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.integerMaxJade">Integer Max Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.longJade">Long Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.longRequiredJade">Long Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMinJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.longMinJade">Long Min Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="longMaxJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.longMaxJade">Long Max Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.floatJade">Float Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.floatRequiredJade">Float Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMinJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.floatMinJade">Float Min Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="floatMaxJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.floatMaxJade">Float Max Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.doubleRequiredJade">Double Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMinJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.doubleMinJade">Double Min Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="doubleMaxJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.doubleMaxJade">Double Max Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalRequiredJade">Big Decimal Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMinJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalMinJade">Big Decimal Min Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bigDecimalMaxJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.bigDecimalMaxJade">Big Decimal Max Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.localDateJade">Local Date Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="localDateRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.localDateRequiredJade">Local Date Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.zonedDateTimeJade">Zoned Date Time Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="zonedDateTimeRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.zonedDateTimeRequiredJade">Zoned Date Time Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.booleanJade">Boolean Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="booleanRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.booleanRequiredJade">Boolean Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.enumJade">Enum Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="enumRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.enumRequiredJade">Enum Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageJade">Byte Image Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageRequiredJade">Byte Image Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMinbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageMinbytesJade">Byte Image Minbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteImageMaxbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteImageMaxbytesJade">Byte Image Maxbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyJade">Byte Any Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyRequiredJade">Byte Any Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMinbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyMinbytesJade">Byte Any Minbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteAnyMaxbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteAnyMaxbytesJade">Byte Any Maxbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextJade">Byte Text Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextRequiredJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextRequiredJade">Byte Text Required Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMinbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextMinbytesJade">Byte Text Minbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="byteTextMaxbytesJade"><span data-translate="travisMysqlApp.fieldTestPagerEntity.byteTextMaxbytesJade">Byte Text Maxbytes Jade</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestPagerEntity in vm.fieldTestPagerEntities track by fieldTestPagerEntity.id">
+                    <td><a ui-sref="field-test-pager-entity-detail({id:fieldTestPagerEntity.id})">{{fieldTestPagerEntity.id}}</a></td>
+                    <td>{{fieldTestPagerEntity.stringJade}}</td>
+                    <td>{{fieldTestPagerEntity.stringRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.stringMinlengthJade}}</td>
+                    <td>{{fieldTestPagerEntity.stringMaxlengthJade}}</td>
+                    <td>{{fieldTestPagerEntity.stringPatternJade}}</td>
+                    <td>{{fieldTestPagerEntity.integerJade}}</td>
+                    <td>{{fieldTestPagerEntity.integerRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.integerMinJade}}</td>
+                    <td>{{fieldTestPagerEntity.integerMaxJade}}</td>
+                    <td>{{fieldTestPagerEntity.longJade}}</td>
+                    <td>{{fieldTestPagerEntity.longRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.longMinJade}}</td>
+                    <td>{{fieldTestPagerEntity.longMaxJade}}</td>
+                    <td>{{fieldTestPagerEntity.floatJade}}</td>
+                    <td>{{fieldTestPagerEntity.floatRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.floatMinJade}}</td>
+                    <td>{{fieldTestPagerEntity.floatMaxJade}}</td>
+                    <td>{{fieldTestPagerEntity.doubleRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.doubleMinJade}}</td>
+                    <td>{{fieldTestPagerEntity.doubleMaxJade}}</td>
+                    <td>{{fieldTestPagerEntity.bigDecimalRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.bigDecimalMinJade}}</td>
+                    <td>{{fieldTestPagerEntity.bigDecimalMaxJade}}</td>
+                        <td>{{fieldTestPagerEntity.localDateJade | date:'mediumDate'}}</td>
+                        <td>{{fieldTestPagerEntity.localDateRequiredJade | date:'mediumDate'}}</td>
+                    <td>{{fieldTestPagerEntity.zonedDateTimeJade | date:'medium'}}</td>
+                    <td>{{fieldTestPagerEntity.zonedDateTimeRequiredJade | date:'medium'}}</td>
+                    <td>{{fieldTestPagerEntity.booleanJade}}</td>
+                    <td>{{fieldTestPagerEntity.booleanRequiredJade}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestPagerEntity.enumJade}}">{{fieldTestPagerEntity.enumJade}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestPagerEntity.enumRequiredJade}}">{{fieldTestPagerEntity.enumRequiredJade}}</td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteImageJade" ng-click="vm.openFile(fieldTestPagerEntity.byteImageJadeContentType, fieldTestPagerEntity.byteImageJade)">
+                            <img data-ng-src="{{'data:' + fieldTestPagerEntity.byteImageJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageJade}}" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPagerEntity.byteImageJade">{{fieldTestPagerEntity.byteImageJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteImageJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteImageRequiredJade" ng-click="vm.openFile(fieldTestPagerEntity.byteImageRequiredJadeContentType, fieldTestPagerEntity.byteImageRequiredJade)">
+                            <img data-ng-src="{{'data:' + fieldTestPagerEntity.byteImageRequiredJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageRequiredJade}}" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPagerEntity.byteImageRequiredJade">{{fieldTestPagerEntity.byteImageRequiredJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteImageRequiredJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteImageMinbytesJade" ng-click="vm.openFile(fieldTestPagerEntity.byteImageMinbytesJadeContentType, fieldTestPagerEntity.byteImageMinbytesJade)">
+                            <img data-ng-src="{{'data:' + fieldTestPagerEntity.byteImageMinbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMinbytesJade}}" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPagerEntity.byteImageMinbytesJade">{{fieldTestPagerEntity.byteImageMinbytesJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteImageMinbytesJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteImageMaxbytesJade" ng-click="vm.openFile(fieldTestPagerEntity.byteImageMaxbytesJadeContentType, fieldTestPagerEntity.byteImageMaxbytesJade)">
+                            <img data-ng-src="{{'data:' + fieldTestPagerEntity.byteImageMaxbytesJadeContentType + ';base64,' + fieldTestPagerEntity.byteImageMaxbytesJade}}" style="max-height: 30px;" alt="fieldTestPagerEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestPagerEntity.byteImageMaxbytesJade">{{fieldTestPagerEntity.byteImageMaxbytesJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteImageMaxbytesJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteAnyJade" ng-click="vm.openFile(fieldTestPagerEntity.byteAnyJadeContentType, fieldTestPagerEntity.byteAnyJade)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPagerEntity.byteAnyJade">{{fieldTestPagerEntity.byteAnyJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteAnyJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteAnyRequiredJade" ng-click="vm.openFile(fieldTestPagerEntity.byteAnyRequiredJadeContentType, fieldTestPagerEntity.byteAnyRequiredJade)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPagerEntity.byteAnyRequiredJade">{{fieldTestPagerEntity.byteAnyRequiredJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteAnyRequiredJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteAnyMinbytesJade" ng-click="vm.openFile(fieldTestPagerEntity.byteAnyMinbytesJadeContentType, fieldTestPagerEntity.byteAnyMinbytesJade)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPagerEntity.byteAnyMinbytesJade">{{fieldTestPagerEntity.byteAnyMinbytesJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteAnyMinbytesJade)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestPagerEntity.byteAnyMaxbytesJade" ng-click="vm.openFile(fieldTestPagerEntity.byteAnyMaxbytesJadeContentType, fieldTestPagerEntity.byteAnyMaxbytesJade)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestPagerEntity.byteAnyMaxbytesJade">{{fieldTestPagerEntity.byteAnyMaxbytesJadeContentType}}, {{vm.byteSize(fieldTestPagerEntity.byteAnyMaxbytesJade)}}</span>
+                    </td>
+                    <td>{{fieldTestPagerEntity.byteTextJade}}</td>
+                    <td>{{fieldTestPagerEntity.byteTextRequiredJade}}</td>
+                    <td>{{fieldTestPagerEntity.byteTextMinbytesJade}}</td>
+                    <td>{{fieldTestPagerEntity.byteTextMaxbytesJade}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-pager-entity-detail({id:fieldTestPagerEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-pager-entity.edit({id:fieldTestPagerEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-pager-entity.delete({id:fieldTestPagerEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+    </div>
+    <uib-pager total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pager>
+</div>

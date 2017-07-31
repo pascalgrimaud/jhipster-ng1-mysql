@@ -1,0 +1,67 @@
+
+<div>
+    <h2><span data-translate="travisMysqlApp.testManyToMany.detail.title">Test Many To Many</span> {{vm.testManyToMany.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testEntity">Test Entity</span></dt>
+        <dd>
+            <span ng-repeat="testEntity in vm.testManyToMany.testEntities">
+                <a ui-sref="test-entity-detail({id: testEntity.id})">{{testEntity.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testMapstruct">Test Mapstruct</span></dt>
+        <dd>
+            <span ng-repeat="testMapstruct in vm.testManyToMany.testMapstructs">
+                <a ui-sref="test-mapstruct-detail({id: testMapstruct.id})">{{testMapstruct.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testServiceClass">Test Service Class</span></dt>
+        <dd>
+            <span ng-repeat="testServiceClass in vm.testManyToMany.testServiceClasses">
+                <a ui-sref="test-service-class-detail({id: testServiceClass.id})">{{testServiceClass.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testServiceImpl">Test Service Impl</span></dt>
+        <dd>
+            <span ng-repeat="testServiceImpl in vm.testManyToMany.testServiceImpls">
+                <a ui-sref="test-service-impl-detail({id: testServiceImpl.id})">{{testServiceImpl.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testInfiniteScroll">Test Infinite Scroll</span></dt>
+        <dd>
+            <span ng-repeat="testInfiniteScroll in vm.testManyToMany.testInfiniteScrolls">
+                <a ui-sref="test-infinite-scroll-detail({id: testInfiniteScroll.id})">{{testInfiniteScroll.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testPager">Test Pager</span></dt>
+        <dd>
+            <span ng-repeat="testPager in vm.testManyToMany.testPagers">
+                <a ui-sref="test-pager-detail({id: testPager.id})">{{testPager.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testPagination">Test Pagination</span></dt>
+        <dd>
+            <span ng-repeat="testPagination in vm.testManyToMany.testPaginations">
+                <a ui-sref="test-pagination-detail({id: testPagination.id})">{{testPagination.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="travisMysqlApp.testManyToMany.testCustomTableName">Test Custom Table Name</span></dt>
+        <dd>
+            <span ng-repeat="testCustomTableName in vm.testManyToMany.testCustomTableNames">
+                <a ui-sref="test-custom-table-name-detail({id: testCustomTableName.id})">{{testCustomTableName.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="test-many-to-many-detail.edit({id:vm.testManyToMany.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

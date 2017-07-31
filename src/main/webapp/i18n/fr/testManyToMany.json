@@ -1,0 +1,28 @@
+{
+    "travisMysqlApp": {
+        "testManyToMany" : {
+            "home": {
+                "title": "TestManyToManies",
+                "createLabel": "Créer un nouveau Test Many To Many",
+                "createOrEditLabel": "Créer ou éditer un Test Many To Many"
+            },
+            "created": "Un nouveau Test Many To Many a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Test Many To Many avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Test Many To Many avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Test Many To Many {{ id }} ?"
+            },
+            "detail": {
+                "title": "Test Many To Many"
+            },
+            "testEntity": "Test Entity",
+            "testMapstruct": "Test Mapstruct",
+            "testServiceClass": "Test Service Class",
+            "testServiceImpl": "Test Service Impl",
+            "testInfiniteScroll": "Test Infinite Scroll",
+            "testPager": "Test Pager",
+            "testPagination": "Test Pagination",
+            "testCustomTableName": "Test Custom Table Name"
+        }
+    }
+}

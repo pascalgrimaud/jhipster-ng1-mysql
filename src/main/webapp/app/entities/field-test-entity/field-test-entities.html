@@ -1,0 +1,172 @@
+<div>
+    <h2 data-translate="travisMysqlApp.fieldTestEntity.home.title">Field Test Entities</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="field-test-entity.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.fieldTestEntity.home.createLabel">
+                        Create new Field Test Entity
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.stringTom">String Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.stringRequiredTom">String Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.stringMinlengthTom">String Minlength Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.stringMaxlengthTom">String Maxlength Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.stringPatternTom">String Pattern Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.integerTom">Integer Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.integerRequiredTom">Integer Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.integerMinTom">Integer Min Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.integerMaxTom">Integer Max Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.longTom">Long Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.longRequiredTom">Long Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.longMinTom">Long Min Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.longMaxTom">Long Max Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.floatTom">Float Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.floatRequiredTom">Float Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.floatMinTom">Float Min Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.floatMaxTom">Float Max Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.doubleRequiredTom">Double Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.doubleMinTom">Double Min Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.doubleMaxTom">Double Max Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.bigDecimalRequiredTom">Big Decimal Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.bigDecimalMinTom">Big Decimal Min Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.bigDecimalMaxTom">Big Decimal Max Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.localDateTom">Local Date Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.localDateRequiredTom">Local Date Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.zonedDateTimeTom">Zoned Date Time Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.zonedDateTimeRequiredTom">Zoned Date Time Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.booleanTom">Boolean Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.booleanRequiredTom">Boolean Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.enumTom">Enum Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.enumRequiredTom">Enum Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteImageTom">Byte Image Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteImageRequiredTom">Byte Image Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteImageMinbytesTom">Byte Image Minbytes Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteImageMaxbytesTom">Byte Image Maxbytes Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteAnyTom">Byte Any Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteAnyRequiredTom">Byte Any Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteAnyMinbytesTom">Byte Any Minbytes Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteAnyMaxbytesTom">Byte Any Maxbytes Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteTextTom">Byte Text Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteTextRequiredTom">Byte Text Required Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteTextMinbytesTom">Byte Text Minbytes Tom</span></th>
+                    <th><span data-translate="travisMysqlApp.fieldTestEntity.byteTextMaxbytesTom">Byte Text Maxbytes Tom</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="fieldTestEntity in vm.fieldTestEntities track by fieldTestEntity.id">
+                    <td><a ui-sref="field-test-entity-detail({id:fieldTestEntity.id})">{{fieldTestEntity.id}}</a></td>
+                    <td>{{fieldTestEntity.stringTom}}</td>
+                    <td>{{fieldTestEntity.stringRequiredTom}}</td>
+                    <td>{{fieldTestEntity.stringMinlengthTom}}</td>
+                    <td>{{fieldTestEntity.stringMaxlengthTom}}</td>
+                    <td>{{fieldTestEntity.stringPatternTom}}</td>
+                    <td>{{fieldTestEntity.integerTom}}</td>
+                    <td>{{fieldTestEntity.integerRequiredTom}}</td>
+                    <td>{{fieldTestEntity.integerMinTom}}</td>
+                    <td>{{fieldTestEntity.integerMaxTom}}</td>
+                    <td>{{fieldTestEntity.longTom}}</td>
+                    <td>{{fieldTestEntity.longRequiredTom}}</td>
+                    <td>{{fieldTestEntity.longMinTom}}</td>
+                    <td>{{fieldTestEntity.longMaxTom}}</td>
+                    <td>{{fieldTestEntity.floatTom}}</td>
+                    <td>{{fieldTestEntity.floatRequiredTom}}</td>
+                    <td>{{fieldTestEntity.floatMinTom}}</td>
+                    <td>{{fieldTestEntity.floatMaxTom}}</td>
+                    <td>{{fieldTestEntity.doubleRequiredTom}}</td>
+                    <td>{{fieldTestEntity.doubleMinTom}}</td>
+                    <td>{{fieldTestEntity.doubleMaxTom}}</td>
+                    <td>{{fieldTestEntity.bigDecimalRequiredTom}}</td>
+                    <td>{{fieldTestEntity.bigDecimalMinTom}}</td>
+                    <td>{{fieldTestEntity.bigDecimalMaxTom}}</td>
+                        <td>{{fieldTestEntity.localDateTom | date:'mediumDate'}}</td>
+                        <td>{{fieldTestEntity.localDateRequiredTom | date:'mediumDate'}}</td>
+                    <td>{{fieldTestEntity.zonedDateTimeTom | date:'medium'}}</td>
+                    <td>{{fieldTestEntity.zonedDateTimeRequiredTom | date:'medium'}}</td>
+                    <td>{{fieldTestEntity.booleanTom}}</td>
+                    <td>{{fieldTestEntity.booleanRequiredTom}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumFieldClass.' + fieldTestEntity.enumTom}}">{{fieldTestEntity.enumTom}}</td>
+                    <td data-translate="{{'travisMysqlApp.EnumRequiredFieldClass.' + fieldTestEntity.enumRequiredTom}}">{{fieldTestEntity.enumRequiredTom}}</td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteImageTom" ng-click="vm.openFile(fieldTestEntity.byteImageTomContentType, fieldTestEntity.byteImageTom)">
+                            <img data-ng-src="{{'data:' + fieldTestEntity.byteImageTomContentType + ';base64,' + fieldTestEntity.byteImageTom}}" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestEntity.byteImageTom">{{fieldTestEntity.byteImageTomContentType}}, {{vm.byteSize(fieldTestEntity.byteImageTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteImageRequiredTom" ng-click="vm.openFile(fieldTestEntity.byteImageRequiredTomContentType, fieldTestEntity.byteImageRequiredTom)">
+                            <img data-ng-src="{{'data:' + fieldTestEntity.byteImageRequiredTomContentType + ';base64,' + fieldTestEntity.byteImageRequiredTom}}" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestEntity.byteImageRequiredTom">{{fieldTestEntity.byteImageRequiredTomContentType}}, {{vm.byteSize(fieldTestEntity.byteImageRequiredTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteImageMinbytesTom" ng-click="vm.openFile(fieldTestEntity.byteImageMinbytesTomContentType, fieldTestEntity.byteImageMinbytesTom)">
+                            <img data-ng-src="{{'data:' + fieldTestEntity.byteImageMinbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMinbytesTom}}" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestEntity.byteImageMinbytesTom">{{fieldTestEntity.byteImageMinbytesTomContentType}}, {{vm.byteSize(fieldTestEntity.byteImageMinbytesTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteImageMaxbytesTom" ng-click="vm.openFile(fieldTestEntity.byteImageMaxbytesTomContentType, fieldTestEntity.byteImageMaxbytesTom)">
+                            <img data-ng-src="{{'data:' + fieldTestEntity.byteImageMaxbytesTomContentType + ';base64,' + fieldTestEntity.byteImageMaxbytesTom}}" style="max-height: 30px;" alt="fieldTestEntity image"/>
+                        </a>
+                        <span ng-if="fieldTestEntity.byteImageMaxbytesTom">{{fieldTestEntity.byteImageMaxbytesTomContentType}}, {{vm.byteSize(fieldTestEntity.byteImageMaxbytesTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteAnyTom" ng-click="vm.openFile(fieldTestEntity.byteAnyTomContentType, fieldTestEntity.byteAnyTom)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestEntity.byteAnyTom">{{fieldTestEntity.byteAnyTomContentType}}, {{vm.byteSize(fieldTestEntity.byteAnyTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteAnyRequiredTom" ng-click="vm.openFile(fieldTestEntity.byteAnyRequiredTomContentType, fieldTestEntity.byteAnyRequiredTom)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestEntity.byteAnyRequiredTom">{{fieldTestEntity.byteAnyRequiredTomContentType}}, {{vm.byteSize(fieldTestEntity.byteAnyRequiredTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteAnyMinbytesTom" ng-click="vm.openFile(fieldTestEntity.byteAnyMinbytesTomContentType, fieldTestEntity.byteAnyMinbytesTom)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestEntity.byteAnyMinbytesTom">{{fieldTestEntity.byteAnyMinbytesTomContentType}}, {{vm.byteSize(fieldTestEntity.byteAnyMinbytesTom)}}</span>
+                    </td>
+                    <td>
+                        <a ng-if="fieldTestEntity.byteAnyMaxbytesTom" ng-click="vm.openFile(fieldTestEntity.byteAnyMaxbytesTomContentType, fieldTestEntity.byteAnyMaxbytesTom)" data-translate="entity.action.open">open</a>
+                        <span ng-if="fieldTestEntity.byteAnyMaxbytesTom">{{fieldTestEntity.byteAnyMaxbytesTomContentType}}, {{vm.byteSize(fieldTestEntity.byteAnyMaxbytesTom)}}</span>
+                    </td>
+                    <td>{{fieldTestEntity.byteTextTom}}</td>
+                    <td>{{fieldTestEntity.byteTextRequiredTom}}</td>
+                    <td>{{fieldTestEntity.byteTextMinbytesTom}}</td>
+                    <td>{{fieldTestEntity.byteTextMaxbytesTom}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="field-test-entity-detail({id:fieldTestEntity.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-entity.edit({id:fieldTestEntity.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="field-test-entity.delete({id:fieldTestEntity.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

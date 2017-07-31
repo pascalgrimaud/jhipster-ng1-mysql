@@ -1,0 +1,72 @@
+<div>
+    <h2 data-translate="travisMysqlApp.testCustomTableName.home.title">Test Custom Table Names</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="test-custom-table-name.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="travisMysqlApp.testCustomTableName.home.createLabel">
+                        Create new Test Custom Table Name
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="travisMysqlApp.testCustomTableName.testEntity">Test Entity</span></th>
+                    <th><span data-translate="travisMysqlApp.testCustomTableName.userOneToMany">User One To Many</span></th>
+                    <th><span data-translate="travisMysqlApp.testCustomTableName.userManyToMany">User Many To Many</span></th>
+                    <th><span data-translate="travisMysqlApp.testCustomTableName.userOneToOne">User One To One</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="testCustomTableName in vm.testCustomTableNames track by testCustomTableName.id">
+                    <td><a ui-sref="test-custom-table-name-detail({id:testCustomTableName.id})">{{testCustomTableName.id}}</a></td>
+                    <td>
+                        <a ui-sref="test-entity-detail({id:testCustomTableName.testEntity.id})">{{testCustomTableName.testEntity.id}}</a>
+                    </td>
+                    <td>
+                        {{testCustomTableName.userOneToMany.login}}
+                    </td>
+                    <td>
+                        <span ng-repeat="userManyToMany in testCustomTableName.userManyToManies">
+                            {{userManyToMany.login}}{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td>
+                        {{testCustomTableName.userOneToOne.login}}
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="test-custom-table-name-detail({id:testCustomTableName.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-custom-table-name.edit({id:testCustomTableName.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="test-custom-table-name.delete({id:testCustomTableName.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
