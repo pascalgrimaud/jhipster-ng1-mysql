@@ -43,4 +43,5 @@
         <addPrimaryKey columnNames="test_mapstructs_id, user_many_to_manies_id" tableName="test_mapstruct_user_many_to_many"/>
         
     </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

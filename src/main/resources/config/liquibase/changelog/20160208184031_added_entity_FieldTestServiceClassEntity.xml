@@ -224,4 +224,5 @@
         <dropDefaultValue tableName="field_test_service_class_entity" columnName="zoned_date_time_required_bob" columnDataType="datetime"/>
         
     </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

@@ -114,4 +114,5 @@
         <addPrimaryKey columnNames="test_many_to_manies_id, test_custom_table_names_id" tableName="test_many_to_many_test_custom_table_name"/>
         
     </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
 </databaseChangeLog>

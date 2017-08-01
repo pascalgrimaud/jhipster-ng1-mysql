@@ -16,11 +16,10 @@ public interface TestMapstructRepository extends JpaRepository<TestMapstruct,Lon
 
     @Query("select test_mapstruct from TestMapstruct test_mapstruct where test_mapstruct.userOneToMany.login = ?#{principal.username}")
     List<TestMapstruct> findByUserOneToManyIsCurrentUser();
-    
     @Query("select distinct test_mapstruct from TestMapstruct test_mapstruct left join fetch test_mapstruct.userManyToManies")
     List<TestMapstruct> findAllWithEagerRelationships();
 
     @Query("select test_mapstruct from TestMapstruct test_mapstruct left join fetch test_mapstruct.userManyToManies where test_mapstruct.id =:id")
     TestMapstruct findOneWithEagerRelationships(@Param("id") Long id);
-    
+
 }

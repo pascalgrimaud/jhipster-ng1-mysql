@@ -16,11 +16,10 @@ public interface TestServiceImplRepository extends JpaRepository<TestServiceImpl
 
     @Query("select test_service_impl from TestServiceImpl test_service_impl where test_service_impl.userOneToMany.login = ?#{principal.username}")
     List<TestServiceImpl> findByUserOneToManyIsCurrentUser();
-    
     @Query("select distinct test_service_impl from TestServiceImpl test_service_impl left join fetch test_service_impl.userManyToManies")
     List<TestServiceImpl> findAllWithEagerRelationships();
 
     @Query("select test_service_impl from TestServiceImpl test_service_impl left join fetch test_service_impl.userManyToManies where test_service_impl.id =:id")
     TestServiceImpl findOneWithEagerRelationships(@Param("id") Long id);
-    
+
 }

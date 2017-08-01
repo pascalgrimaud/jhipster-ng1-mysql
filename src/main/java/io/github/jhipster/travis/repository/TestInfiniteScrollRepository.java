@@ -16,11 +16,10 @@ public interface TestInfiniteScrollRepository extends JpaRepository<TestInfinite
 
     @Query("select test_infinite_scroll from TestInfiniteScroll test_infinite_scroll where test_infinite_scroll.userOneToMany.login = ?#{principal.username}")
     List<TestInfiniteScroll> findByUserOneToManyIsCurrentUser();
-    
     @Query("select distinct test_infinite_scroll from TestInfiniteScroll test_infinite_scroll left join fetch test_infinite_scroll.userManyToManies")
     List<TestInfiniteScroll> findAllWithEagerRelationships();
 
     @Query("select test_infinite_scroll from TestInfiniteScroll test_infinite_scroll left join fetch test_infinite_scroll.userManyToManies where test_infinite_scroll.id =:id")
     TestInfiniteScroll findOneWithEagerRelationships(@Param("id") Long id);
-    
+
 }

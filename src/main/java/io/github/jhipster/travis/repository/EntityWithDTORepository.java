@@ -12,5 +12,5 @@ import org.springframework.data.jpa.repository.*;
 @SuppressWarnings("unused")
 @Repository
 public interface EntityWithDTORepository extends JpaRepository<EntityWithDTO,Long> {
-    
+
 }
